@@ -1,0 +1,41 @@
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csprojAssemblyReference.cache
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csprojAssemblyReference.cache
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csprojAssemblyReference.cache
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\Paul\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.AssemblyReference.cache
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\Zach\Documents\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.AssemblyReference.cache
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.dll
+C:\Users\Zach\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Debug\DrawingShapesLibrary.pdb

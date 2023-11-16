@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MySnipItTool.ScreenshotTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MySnipItTool"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="White">
+    <Grid Cursor="Cross">
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+            <Canvas Width="300" Name="canvas" Background="White" MouseWheel="canvas_MouseWheel"
+                    FocusManager.IsFocusScope="True" MouseDown="imgControl_MouseDown" MouseMove="imgControl_MouseMove" MouseUp="imgControl_MouseUp">
+                <Canvas.RenderTransform>
+                    <ScaleTransform x:Name="st">
+                        
+                    </ScaleTransform>
+                    
+                </Canvas.RenderTransform>
+                <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Name="imgControl"/>
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

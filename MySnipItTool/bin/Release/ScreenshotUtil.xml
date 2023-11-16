@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScreenshotUtil</name>
+    </assembly>
+    <members>
+        <member name="T:ScreenshotUtil.ScreenshotConverter">
+            <summary>
+            A class that contains a method for converting a Windows Forms Bitmap object into a WPF BitmapImage
+            </summary>
+        </member>
+        <member name="M:ScreenshotUtil.ScreenshotConverter.ConvertToBitmapImage(System.Drawing.Bitmap)">
+            <summary>
+            Takes a System.Drawing.Bitmap object and converts it into a System.Windows.Media.Image.BitmapImage object.
+            </summary>
+            <param name="image">The Bitmap to convert.</param>
+            <returns>The System.Drawing.Bitmap parameter as a BitmapImage</returns>
+        </member>
+        <member name="T:ScreenshotUtil.ScreenshotUtility">
+            <summary>
+            A static class which contains methods for taking screenshots using GDI/GDI+ features.
+            </summary>
+        </member>
+        <member name="M:ScreenshotUtil.ScreenshotUtility.TakeScreenshot(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Uses built-in GDI/GDI+ methods to take a screenshot. 
+            </summary>
+            <param name="width">The width of the screenshot.</param>
+            <param name="height">The height of the screenshot.</param>
+            <param name="topLeftX">The top left X coordinate of the screen to capture.</param>
+            <param name="topLeftY">The top left Y coordinate of the screen to capture.</param>
+            <returns>Returns a Bitmap containing the screenshot.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ScreenshotUtil.ScreenshotUtility.TakeScreenshot(System.Int32,System.Int32,System.Drawing.Point)" -->
+    </members>
+</doc>

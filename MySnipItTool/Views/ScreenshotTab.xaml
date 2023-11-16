@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="MySnipItTool.ScreenshotTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MySnipItTool"
+             xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300" Background="White">
+    <Grid>
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+            <Canvas KeyDown="canvas_KeyDown" MouseWheel="canvas_MouseWheel" Width="300" Name="canvas" Background="White" FocusManager.IsFocusScope="True"
+                    
+                    PreviewMouseDown="imgControl_MouseDown" PreviewMouseMove="imgControl_MouseMove" 
+                    PreviewMouseUp="imgControl_MouseUp"                   >
+                <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Name="imgControl"/>
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

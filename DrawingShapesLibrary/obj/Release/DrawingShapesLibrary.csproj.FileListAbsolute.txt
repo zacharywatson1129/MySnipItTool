@@ -1,0 +1,6 @@
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Release\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\bin\Release\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Release\DrawingShapesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Release\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Release\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\DrawingShapesLibrary\obj\Release\DrawingShapesLibrary.csprojAssemblyReference.cache

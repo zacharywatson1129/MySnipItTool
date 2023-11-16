@@ -1,0 +1,158 @@
+﻿<Window x:Class="MySnipItTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySnipItTool"
+        mc:Ignorable="d" Icon="mysnipittool.ico"
+        Title="MySnipItTool" Height="350" Width="525" Loaded="Window_Loaded" Keyboard.KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style x:Key="ToolBarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition MinHeight="35" MaxHeight="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0"  Background="#FFF1F1F1" Height="20" MaxHeight="20">
+            <MenuItem Header="File">
+                <MenuItem Header="New">
+                    <MenuItem Header="Full Screenshot" Click="TakeFullScreenshot"/>
+                    <MenuItem Header="Screen Snippet" Click="TakeScreenSnippet"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Name="menuItemSave" Header="Save" Click="SaveScreenshot"/>
+                <Separator/>
+                <MenuItem Header="Settings" Click="OpenSettingsDialog"/>
+                <Separator/>
+                <MenuItem Header="Close" Click="CloseApplication"/>
+                <MenuItem Header="Minimize to Taskbar" Click="MinimzeToTaskbar"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Copy" Name="menuItemCopy" Click="CopyCurrentScreenshot" />
+            </MenuItem>
+            <MenuItem Name="menuItemDrawing" Header="Drawing">
+                <MenuItem Header="Color" Click="btnColor_Click"/>
+                <MenuItem Name="penShapeMenuItem" Header="Pen Shape">
+                    <RadioButton Name="radioBtnRound">Round</RadioButton>
+                    <RadioButton Name="radioBtnSquare">Square</RadioButton>
+                </MenuItem>
+                <MenuItem Name="drawingThicknessMenuItem" Header="Drawing Thickness">
+                    <RadioButton Name="radioBtnSkinny">Skinny</RadioButton>
+                    <RadioButton Name="radioBtnNormal">Normal</RadioButton>
+                    <RadioButton Name="radioBtnThick">Thick</RadioButton>
+                </MenuItem>
+            </MenuItem>
+            <!--<MenuItem Header="Text" IsEnabled="False" Name="menuItemText" Click="">
+            </MenuItem>-->
+            <MenuItem Header="About">
+                <MenuItem Header="About MySnipItTool" Name="menuItemAboutMySnipItTool" Click="menuItemAboutMySnipItTool_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <ToolBar Grid.Row="1" MinHeight="35" MaxHeight="35" Name="toolbar" ToolBarTray.IsLocked="True" Background="#FFF1F1F1">
+            <Button Style="{StaticResource ToolBarButtonStyle}" Name="btnFullScreenshot" Click="TakeFullScreenshot" Margin="5,0,5,0">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="0,0,2,0" VerticalAlignment="Center" Source="Images/fullscreen.png"/>
+                    <TextBlock  Grid.Column="1" VerticalAlignment="Center" Text="Full Screenshot"/>
+                </Grid>
+            </Button>
+            <Button Name="btnScreenSnippet" Click="TakeScreenSnippet">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="0,0,2,0" VerticalAlignment="Center" Source="Images/selection.png"/>
+                    <TextBlock  Grid.Column="1" VerticalAlignment="Center" Text="Screen Snippet"/>
+                </Grid>
+
+            </Button>
+
+            <StackPanel Orientation="Horizontal" Name="drawingToolsGroup" Margin="2">
+                <Button Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/pencil.png"/>
+                </Button>
+                <Button Name="btnLine" Click="btnLine_Click" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/line.png"/>
+                </Button>
+                <Button Name="btnRectangle" Click="btnRectangle_Click" Style="{StaticResource ToolBarButtonStyle}" MinWidth="10">
+                    <!--<Image Source="Images/rectangle.png" />-->
+                    <Button.Background>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <RectangleGeometry RadiusX="10" RadiusY="10"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="2" Brush="Black"/>
+                                    </GeometryDrawing.Pen>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btnCircle" Click="btnCircle_Click" Style="{StaticResource ToolBarButtonStyle}" 
+                        MinHeight="30" MaxHeight="30" MinWidth="30" MaxWidth="30">
+                    <!--<Image Source="Images/circle.png"/>-->
+                    <!--Creates the circle icon.-->
+                    <Button.Background>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <EllipseGeometry RadiusX="10" RadiusY="10"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="1" Brush="Black"/>
+                                    </GeometryDrawing.Pen>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btnText" Click="btnText_Click" Style="{StaticResource ToolBarButtonStyle}" FontFamily="Times New Roman" FontWeight="Bold">
+                    <TextBlock Text="T" FontSize="40"/>
+
+                </Button>
+                <Button x:Name="btnEraser" Click="btnEraser_Click" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/Eraser_24px.png"/>
+                </Button>
+                <Button Name="btnColor" Click="btnColor_Click" VerticalAlignment="Stretch" Background="Black" BorderBrush="Transparent" Width="20" Margin="2,4,2,2"/>
+                <Button Name="btnCopy" Click="CopyCurrentScreenshot" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/copy.png"/>
+                </Button>
+                <Button Name="btnSave" Click="SaveScreenshot" VerticalAlignment="Center" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/Save.png"/>
+                </Button>
+                <Button Name="btnDeleteTab" Click="btnDeleteTab_Click" Style="{StaticResource ToolBarButtonStyle}">
+                    <Image Source="Images/Delete.png"/>
+                </Button>
+            </StackPanel>
+
+        </ToolBar>
+
+        <TabControl Grid.Row="2" BorderBrush="Transparent" Name="tabControl"></TabControl>
+        <StatusBar Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="Zoom">Zoom:</TextBlock>
+            </StackPanel>
+        </StatusBar>
+    </Grid>
+</Window>

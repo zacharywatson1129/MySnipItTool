@@ -1,0 +1,361 @@
+F:\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+F:\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe
+F:\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.pdb
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csprojResolveAssemblyReference.cache
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.g.cs
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.g.cs
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.baml
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.Cache
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.exe
+F:\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.baml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.Cache
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\ScreenshotUtil.dll
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\ScreenshotUtil.xml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.baml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Documents\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csprojResolveAssemblyReference.cache
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.pdb
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\ScreenshotUtil.xml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.baml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.baml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.baml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.baml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.baml
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.exe
+F:\Documents Folder before windows restore 5-10-18\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MainWindow.baml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\ScreenshotTab.baml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\Microsoft.Ink.dll
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\ScreenshotUtil.dll
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\bin\Debug\ScreenshotUtil.xml
+C:\Users\zacha\Desktop\MySnipItTool 1.2.5\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.baml
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.baml
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\Projects\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\ScreenshotUtil.dll
+C:\Users\zacha\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Debug\ScreenshotUtil.xml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\bin\Debug\ScreenshotUtil.xml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MainWindow.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\ScreenshotTab.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\Zachary\Dropbox\My Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\WpfMath.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.dll
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\WpfMath.dll
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.pdb
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\drawing.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\OneDrive\Documents\MySnipItTool\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.dll
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\WpfMath.dll
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.pdb
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\drawing.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\Paul\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe.config
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\WpfMath.dll
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\DrawingShapesLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\bin\Debug\LaTeXManagerLibrary.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csprojAssemblyReference.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Images\pencil.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\drawing.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ShapePropertiesPanel.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\App.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ShapePropertiesPanel.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Resources\DesignerItem.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Resources\ResizeRotateChrome.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Resources\SizeChrome.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.baml
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.g.resources
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.Properties.Resources.resources
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.GenerateResource.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CoreCompileInputs.cache
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.CopyComplete
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotModeSelection.g.cs
+C:\Users\zacha\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotModeSelection.baml
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.AssemblyReference.cache
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Images\pencil.baml
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\drawing.baml
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotModeSelection.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ShapePropertiesPanel.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\Zach\Documents\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.csproj.AssemblyReference.cache
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Images\pencil.baml
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\drawing.baml
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotModeSelection.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\ShapePropertiesPanel.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\AboutPage.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\LaTeXEquationManager.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\Views\ScreenshotTab.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SettingsDialog.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\SnipScreenForm.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\App.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_Content.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.cache
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool_MarkupCompile.lref
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.exe
+C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Debug\MySnipItTool.pdb

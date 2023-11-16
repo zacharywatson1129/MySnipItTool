@@ -1,0 +1,27 @@
+﻿<Window x:Class="MySnipItTool.Views.ScreenshotModeSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySnipItTool.Views"
+        mc:Ignorable="d"
+        Title="ScreenshotModeSelection" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="1.75*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Choose a selection mode:" FontSize="18" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Width="140" Height="110" Background="Transparent" BorderBrush="Transparent">
+            <TextBlock Text="Full Screen" FontSize="18"/>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1" Width="140" Height="110" Background="Transparent" BorderBrush="Transparent">
+            <TextBlock Text="Select Region" FontSize="18"/>
+        </Button>
+    </Grid>
+</Window>

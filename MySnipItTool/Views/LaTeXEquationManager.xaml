@@ -1,0 +1,35 @@
+﻿<Window x:Class="MySnipItTool.Views.LaTeXEquationManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySnipItTool.Views"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+        Title="LaTeX Equation Manager" Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.RowSpan="2">
+            
+        </ListBox>
+        <controls:FormulaControl Grid.Row="1" Formula="\left(x^2 + 2 \cdot x + 2\right) = 0"/>
+        <TextBox TextChanged="TextBox_TextChanged" Grid.Column="1" Grid.Row="0" FontSize="24" Text="Equation Text"/>
+        <Button Content="Add To Canvas" Grid.Row="1" Grid.Column="1" Click="Button_Click"/>
+        <ListBox Grid.Row="0" Grid.Column="2">
+            <ListBoxItem Content="Fraction"/>
+            <ListBoxItem Content="Power of 2"/>
+            <ListBoxItem Content="Power of 3"/>
+            <ListBoxItem Content="Square Root"/>
+            <ListBoxItem Content="Cube Root"/>
+        </ListBox>
+        <Button Grid.Row="1" Grid.Column="2">Add To Equation</Button>
+    </Grid>
+</Window>

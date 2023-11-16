@@ -1,0 +1,32 @@
+﻿<Window x:Class="MySnipItTool.AboutPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySnipItTool"
+        mc:Ignorable="d"
+        Title="About MySnipItTool" MinHeight="200" MaxHeight="250" Height="213" MinWidth="500" MaxWidth="550" Width="501">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="mysnipittool.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1"/>
+        <TextBlock Text="MySnipItTool" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Margin="2" 
+            Text="MySnipItTool is a free, open source screen capture application running under the MIT license. Developed for Windows, it is designed to be a lightweight replacement for the Snipping Tool." 
+            Grid.Row="1" Grid.Column="2" TextWrapping="Wrap">
+            <!--<Hyperlink NavigateUri="https://github.com/zacharywatson1129/MySnipItTool"/>-->
+            MySnipItTool is a free, open source screen capture application running under the MIT license. Developed for Windows, it is designed to be a lightweight replacement for the Snipping Tool.
+            The project can be found here:  <Hyperlink NavigateUri="https://github.com/zacharywatson1129/MySnipItTool" RequestNavigate="Hyperlink_RequestNavigate">here</Hyperlink>
+        </TextBlock>
+        
+
+    </Grid>
+</Window>
