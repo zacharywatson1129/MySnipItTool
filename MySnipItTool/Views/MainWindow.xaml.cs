@@ -177,6 +177,17 @@ namespace MySnipItTool
             }
         }*/
 
+        private void btnEraser_Click(object sender, RoutedEventArgs e)
+        {
+            drawingMode = DrawingMode.Eraser;
+            TabItem item = tabControl.SelectedItem as TabItem;
+            ScreenshotTab tab = item.Content as ScreenshotTab;
+            tab.ToolSelected = this.drawingMode;
+
+            //DeselectAllBtnsBut(btnFreeDraw);
+            //txtDrawingToolMsg.Text = "Free Draw";
+        }
+
 
         private void btnFreeDraw_Click(object sender, RoutedEventArgs e)
         {
@@ -478,6 +489,16 @@ namespace MySnipItTool
         public void SetMessageInStatusBar(string msg)
         {
             //textBlockMessage.Text = msg;
+        }
+
+        private void btnFreeDraw_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnErase_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

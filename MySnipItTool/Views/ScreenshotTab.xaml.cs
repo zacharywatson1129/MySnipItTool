@@ -20,6 +20,10 @@ namespace MySnipItTool
 {
     /// <summary>
     /// Interaction logic for ScreenshotTab.xaml
+    /// This class represents a single screenshot tab, and should handle the logic.
+    /// The drawing state is represented through the DrawingMode enum:
+    /// { None, Eraser, FreeDraw, Line, Rectangle, Circle, Polygon, Text, Equation, Select }
+    /// 
     /// </summary>
     public partial class ScreenshotTab : UserControl
     {
@@ -56,8 +60,6 @@ namespace MySnipItTool
                 RemoveEventHandlers();
                 SetValue(ToolSelectedProperty, value);
                 SetEventHandlers();
-                // Change event handlers.
-                // canvas.MouseDown += Canvas_MouseDown;
             } 
         }
 
@@ -377,6 +379,11 @@ namespace MySnipItTool
         //    }
         //}
 
+        /// <summary>
+        /// This is actually the mouse down event associated with the canvas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void imgControl_MouseDown(object sender, MouseButtonEventArgs e)
         {
             hasStartedDrawing = true;
@@ -389,17 +396,21 @@ namespace MySnipItTool
                 case DrawingMode.Eraser:
                     break;
                 case DrawingMode.FreeDraw:
+                    polyLine = new Polyline();
+                    SetStrokeProperties(polyLine);
+                    canvas.Children.Add(polyLine);
+                    polyLine.Points.Add(e.GetPosition(canvas));
                     break;
                 case DrawingMode.Line:
                     break;
                 case DrawingMode.Rectangle:
                     rectangle = new Rectangle();
                     currentlyDrawingShape = rectangle;
-                    ContextMenu cm = new ContextMenu();
+                    // ContextMenu cm = new ContextMenu();
                     // cm.Items.Add(new ShapePropertiesPanel());
                     // cm.Items.Add(new Label() { Content = "hello" });
 
-                    rectangle.ContextMenu = cm;
+                    // rectangle.ContextMenu = cm;
 
                     // TODO - add context menu to all of these items
                     // 1. Set Fill
@@ -657,7 +668,7 @@ namespace MySnipItTool
 
         private void SetStrokeProperties(Shape shape)
         {
-            shape.MouseEnter += OnMouseOver;
+            // shape.MouseEnter += OnMouseOver;
 
             shape.Stroke = new SolidColorBrush(mainWindow.color);
             shape.Fill = new SolidColorBrush(Colors.Transparent);
@@ -691,7 +702,7 @@ namespace MySnipItTool
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
 
-        private void Shape_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /*private void Shape_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
             if (mainWindow.mainMode == MainMode.Select)
@@ -737,12 +748,12 @@ namespace MySnipItTool
             {
                 selectedShapeBounds.reset();
             }
-        }
+        }*/
 
         // This is our eraser event.
         // It simply removes the element from the object when the tool selected
         // is the eraser tool and we have the mouse down.
-        private void OnMouseOver(object sender, MouseEventArgs e)
+        /*private void OnMouseOver(object sender, MouseEventArgs e)
         {
             if ((e.LeftButton == MouseButtonState.Pressed) && (mainWindow.mainMode == MainMode.Erase))
             {
@@ -752,7 +763,7 @@ namespace MySnipItTool
             {
 
             }
-        }
+        }*/
 
         private Polygon CreatePolygon(double radius, int numSides, Point center)
         {
@@ -777,39 +788,6 @@ namespace MySnipItTool
 
             return output;
         }
-
-        /*private void imgControl_MouseMove(object sender, MouseEventArgs e)
-        {
-
-            if ((e.LeftButton == MouseButtonState.Pressed) && hasStartedDrawing)
-            {
-                //Trace.WriteLine($"Mouse moved to ({e.GetPosition(canvas).X}, {e.GetPosition(canvas).Y})");
-                switch (mainWindow.mainMode)
-                {
-                    case MainMode.Draw:
-                        switch (mainWindow.drawingMode)
-                        {
-                            case DrawingMode.FreeDraw:
-
-                                polyLine.Points.Add(e.GetPosition(canvas));
-                                break;
-                            case DrawingMode.Line:
-                                line.X2 = e.GetPosition(canvas).X;
-                                line.Y2 = e.GetPosition(canvas).Y;
-                                break;
-                            case DrawingMode.Rectangle:
-                                endPoint = e.GetPosition(canvas);
-                                CalculateNewShapePosition(startPoint, endPoint, rectangle);
-                                break;
-                            case DrawingMode.Circle:
-                                endPoint = e.GetPosition(canvas);
-                                CalculateNewShapePosition(startPoint, endPoint, circle);
-                                break;
-                        }
-                        break;
-                }
-            }
-        }*/
 
         private void imgControl_MouseMove(object sender, MouseEventArgs e)
         {
@@ -999,6 +977,8 @@ namespace MySnipItTool
                 case DrawingMode.Eraser:
                     break;
                 case DrawingMode.FreeDraw:
+
+                    polyLine = null;
                     break;
                 case DrawingMode.Line:
                     p = line.TranslatePoint(new Point(0, 0), canvas);
@@ -1039,10 +1019,10 @@ namespace MySnipItTool
                         fill.Click += fillClickEvent;
                         // menu.Items.Add(new Menu() { fill });
                         currentlyDrawingShape.ContextMenu = menu;*/
-                        currentlyDrawingShape.MouseRightButtonDown += CurrentlyDrawingShape_MouseRightButtonDown;
-                        currentlyDrawingShape.MouseLeftButtonDown += Shape_MouseLeftButtonDown;
-                        currentlyDrawingShape.MouseLeftButtonUp += Shape_MouseLeftButtonUp;
-                        currentlyDrawingShape.MouseMove += Shape_MouseMove;
+                        //currentlyDrawingShape.MouseRightButtonDown += CurrentlyDrawingShape_MouseRightButtonDown;
+                        //currentlyDrawingShape.MouseLeftButtonDown += Shape_MouseLeftButtonDown;
+                        //currentlyDrawingShape.MouseLeftButtonUp += Shape_MouseLeftButtonUp;
+                        //currentlyDrawingShape.MouseMove += Shape_MouseMove;
 
                        /*switch (mainWindow.drawingMode)
                         {
@@ -1113,7 +1093,7 @@ namespace MySnipItTool
             }
         }
 
-        private void canvas_KeyDown(object sender, KeyEventArgs e)
+        /*private void canvas_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.G)
             {
@@ -1125,6 +1105,6 @@ namespace MySnipItTool
                     }
                 }
             }
-        }
+        }*/
     }
 }

@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace MySnipItTool
 {
-    public class DesignerItemDecorator : Control
+    /*public class DesignerItemDecorator : Control
     {
         private Adorner adorner;
 
@@ -93,5 +93,5 @@ namespace MySnipItTool
                 decorator.HideAdorner();
             }
         }
-    }
+    }*/
 }

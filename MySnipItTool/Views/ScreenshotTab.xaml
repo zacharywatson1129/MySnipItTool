@@ -9,10 +9,11 @@
              d:DesignHeight="300" d:DesignWidth="300" Background="White">
     <Grid>
         <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-            <Canvas KeyDown="canvas_KeyDown" MouseWheel="canvas_MouseWheel" Width="300" Name="canvas" Background="White" FocusManager.IsFocusScope="True"
+            <Canvas 
+                MouseWheel="canvas_MouseWheel" Width="300" Name="canvas" Background="White" FocusManager.IsFocusScope="True"
                     
                     PreviewMouseDown="imgControl_MouseDown" PreviewMouseMove="imgControl_MouseMove" 
-                    PreviewMouseUp="imgControl_MouseUp"                   >
+                    PreviewMouseUp="imgControl_MouseUp">
                 <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Name="imgControl"/>
             </Canvas>
         </ScrollViewer>

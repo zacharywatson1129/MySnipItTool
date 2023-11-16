@@ -13,6 +13,10 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style x:Key="DrawingModeButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
         <Path x:Key="hello" Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
             <Path.Data>
 
@@ -176,49 +180,25 @@
                 </Button>
             </ToolBarPanel>
 
-            <!--Drawing Tools-->
-            <ToolBarPanel x:Name="drawingToolsPanel" Orientation="Horizontal"   Visibility="Hidden">
-                <ComboBox Name="comboBoxMainMode" VerticalAlignment="Center" Height="55">
-                    <ComboBoxItem Name="comboBoxItemSelect" Selected="comboBoxItemSelect_Selected"
-                                  VerticalAlignment="Center">
-                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Height="20">
-                            <Image/>
-                            <TextBlock VerticalAlignment="Center" Text="Select"/>
-                        </StackPanel>
-                    </ComboBoxItem>
-                    <ComboBoxItem Name="comboBoxItemErase" Selected="comboBoxItemErase_Selected">
-                        <StackPanel Orientation="Horizontal" Height="20">
-                            <Image Source="../Images/Icons/icons8-erase-40.png"/>
-                            <TextBlock Text="Erase"/>
-                        </StackPanel>
-                    </ComboBoxItem>
-                    <ComboBoxItem Name="comboBoxItemDraw" Content="Draw" Selected="comboBoxItemDraw_Selected"/>
-                </ComboBox>
-                <!--<RadioButton Background="Transparent" Height="50"  x:Name="btnEquation" Click="btnEquation_Click" Width="40"
-                              Style="{StaticResource {x:Type ToggleButton}}">
-                    <Image Source="../Images/Icons/icons8-formula-fx-40.png"/>
-                </RadioButton>-->
-                <RadioButton Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource {x:Type ToggleButton}}"
-                             Width="40" Height="40" Background="Transparent">
-
-                    <Image Source="../Images/pencil48.png" Width="40" Height="40"/>
-
-
+            <!--DrawingMode Tools-->
+            <ToolBarPanel x:Name="drawingToolsPanel" Orientation="Horizontal" Visibility="Hidden">
+                <RadioButton Name="btnEraser" Click="btnEraser_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                    <Image Source="../Images/Icons/icons8-erase-40.png" Width="40" Height="40"/>
                 </RadioButton>
-                <RadioButton Name="btnLine" Click="btnLine_Click" Style="{StaticResource {x:Type ToggleButton}}" Width="40" Height="40">
+                <RadioButton Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                    <Image Source="../Images/pencil48.png" Width="40" Height="40"/>
+                </RadioButton>
+                <RadioButton Name="btnLine" Click="btnLine_Click" Style="{StaticResource DrawingModeButtonStyle}">
                     <Image Source="../Images/line.png"/>
                 </RadioButton>
-                <RadioButton Name="btnRectangle" Click="btnRectangle_Click" Style="{StaticResource {x:Type ToggleButton}}" 
+                <RadioButton Name="btnRectangle" Click="btnRectangle_Click" Style="{StaticResource DrawingModeButtonStyle}" 
                              Width="40" Height="40">
                     <Image Source="../Images/Icons/icons8-rectangle-40.png"/>
                 </RadioButton>
-                <RadioButton Name="btnCircle" Click="btnCircle_Click" Style="{StaticResource {x:Type ToggleButton}}">
+                <RadioButton Name="btnCircle" Click="btnCircle_Click" Style="{StaticResource DrawingModeButtonStyle}">
                     <Image Source="../Images/circle.png"/>
                 </RadioButton>
-                <!--<Button Click="btnPolygon_Click" x:Name="btnPolygon" Style="{StaticResource ToolBarButtonStyle}">
-                    <Image/>
-                </Button>-->
-                <RadioButton Name="btnText" Click="btnText_Click" Style="{StaticResource {x:Type ToggleButton}}">
+                <RadioButton Name="btnText" Click="btnText_Click" Style="{StaticResource DrawingModeButtonStyle}">
                     <Image Source="../Images/Icons/icons8-text-box-40.png"/>
                 </RadioButton>
 

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace MySnipItTool
 {
-    public class ResizeThumb : Thumb
+    /*public class ResizeThumb : Thumb
     {
         private RotateTransform rotateTransform;
         private double angle;
@@ -115,5 +115,5 @@ namespace MySnipItTool
                 this.adorner = null;
             }
         }
-    }
+    }*/
 }
