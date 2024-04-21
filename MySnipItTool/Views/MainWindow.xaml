@@ -16,6 +16,10 @@
         <Style x:Key="DrawingModeButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="MaxWidth" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="MaxHeight" Value="50"/>
         </Style>
         <Path x:Key="hello" Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
             <Path.Data>
@@ -83,11 +87,11 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition MaxWidth="50"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         
-        <Menu VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2"  Background="#FFF1F1F1" Height="25" MaxHeight="25"
+        <Menu VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" Padding="0"  Background="#FFF1F1F1" Height="25" MaxHeight="22"
              FontSize="16" FontFamily="Source Sans Pro" >
             <MenuItem Header="File">
                 <MenuItem Header="New">
@@ -123,7 +127,7 @@
         </Menu>
 
         <ToolBar Cursor="Arrow" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Name="toolbar" ToolBarTray.IsLocked="True" 
-                 Background="#FFF1F1F1" Margin="2" FontSize="18" Height="55">
+                 Background="#FFF1F1F1" Margin="0" FontSize="18" Height="55">
             
             <!--Screenshot Buttons-->
             <!--
@@ -170,79 +174,61 @@
             <!--Basic Copy, Save, Delete Buttons-->
             <ToolBarPanel Name="basicToolsPanel" Orientation="Horizontal" Visibility="Hidden">
                 <Button Name="btnCopy" Click="CopyCurrentScreenshot" Style="{StaticResource ToolBarButtonStyle}">
-                    <Image Source="../Images/Icons/icons8-copy-40.png"/>
+                    <Image Source="../Images/Icons/copy-48.png"/>
                 </Button>
                 <Button Name="btnSave" Click="SaveScreenshot" VerticalAlignment="Center" Style="{StaticResource ToolBarButtonStyle}">
-                    <Image Source="../Images/Icons/icons8-save-40.png"/>
+                    <Image Source="../Images/Icons/save-48.png"/>
                 </Button>
                 <Button Name="btnDeleteTab" Click="btnDeleteTab_Click" Style="{StaticResource ToolBarButtonStyle}">
-                    <Image Source="../Images/Icons/icons8-trash-can-40.png"/>
+                    <Image Source="../Images/Icons/trash-48.png"/>
                 </Button>
             </ToolBarPanel>
 
-            <!--DrawingMode Tools-->
-            <ToolBarPanel x:Name="drawingToolsPanel" Orientation="Horizontal" Visibility="Hidden">
-                <RadioButton Name="btnEraser" Click="btnEraser_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                    <Image Source="../Images/Icons/icons8-erase-40.png" Width="40" Height="40"/>
-                </RadioButton>
-                <RadioButton Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                    <Image Source="../Images/pencil48.png" Width="40" Height="40"/>
-                </RadioButton>
-                <RadioButton Name="btnLine" Click="btnLine_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                    <Image Source="../Images/line.png"/>
-                </RadioButton>
-                <RadioButton Name="btnRectangle" Click="btnRectangle_Click" Style="{StaticResource DrawingModeButtonStyle}" 
-                             Width="40" Height="40">
-                    <Image Source="../Images/Icons/icons8-rectangle-40.png"/>
-                </RadioButton>
-                <RadioButton Name="btnCircle" Click="btnCircle_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                    <Image Source="../Images/circle.png"/>
-                </RadioButton>
-                <RadioButton Name="btnText" Click="btnText_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                    <Image Source="../Images/Icons/icons8-text-box-40.png"/>
-                </RadioButton>
-
-
-                <!--<Image Source="../Images/Icons/icons8-fill-color-40.png"/>-->
-                <Button Name="btnColor" Click="btnColor_Click" VerticalAlignment="Stretch" Background="Black" BorderBrush="Transparent" Width="40"
-                        Height="40" Margin="2,4,2,2"/>
-
-            </ToolBarPanel>
+            
 
         </ToolBar>
 
-        <TabControl Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="Transparent" Name="tabControl" Visibility="Visible"></TabControl>
-        
-        <!--<StatusBar Grid.Row="3" Background="#FFF1F1F1" Grid.ColumnSpan="2"
-                   FontSize="16">
-            <StatusBar.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-            </StatusBar.ItemsPanel>
 
-            <StatusBarItem Grid.Column="0">
-                <TextBlock x:Name="textBlockMessage" Text=""/>
-            </StatusBarItem>
-            
-            <StatusBarItem Grid.Column="2">
-                <StackPanel Orientation="Horizontal">
-                    <Border BorderThickness="1" CornerRadius="2" BorderBrush="Black">
-                        <TextBlock x:Name="txtBlockMode" Background="LightGray" Text=""/>
-                    </Border>
-                    <Separator Margin="5 0" BorderBrush="Black" Foreground="Black"/>
-                    <Border BorderThickness="1" CornerRadius="2" BorderBrush="Black">
-                        <TextBlock Foreground="#FF585858" x:Name="txtDrawingToolMsg" 
-                                   Background="LightGray" Text=""/>
-                    </Border>
-                </StackPanel>
-            </StatusBarItem>
-        </StatusBar>-->
+        <!--DrawingMode Tools-->
+        <ToolBarPanel x:Name="drawingToolsPanel" Orientation="Vertical" 
+                      Visibility="Visible" Grid.Row="2"
+                      Grid.Column="0" Grid.RowSpan="2">
+            <RadioButton Name="btnEraser" Click="btnEraser_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                <Image Source="../Images/Icons/erase-48.png"/>
+            </RadioButton>
+            <RadioButton Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                <Image Source="../Images/pencil48.png" Width="40" Height="40"/>
+            </RadioButton>
+            <RadioButton Name="btnLine" Click="btnLine_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                <Line Fill="Black" Stroke="Black" StrokeThickness="3" X1="0" Y1="35"  X2="35" Y2="0"/>
+                <!--<Image Source="../Images/line.png"/>-->
+            </RadioButton>
+            <RadioButton Name="btnRectangle" Click="btnRectangle_Click" Style="{StaticResource DrawingModeButtonStyle}" 
+                 Width="50" Height="50">
+                <Rectangle Width="35" Height="25" Stroke="Black" Fill="Beige"/>
+            </RadioButton>
+            <RadioButton Name="btnCircle" Click="btnCircle_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                <Ellipse Width="35" Height="35" Stroke="Black" Fill="LightCoral"/>
+            </RadioButton>
+            <RadioButton Name="btnText" Click="btnText_Click" Style="{StaticResource DrawingModeButtonStyle}">
+                <Image Source="../Images/Icons/text-64.png"/>
+            </RadioButton>
+
+
+            <!--<Image Source="../Images/Icons/icons8-fill-color-40.png"/>-->
+            <Button Name="btnColor" Click="btnColor_Click" VerticalAlignment="Stretch" 
+            Background="Black" BorderBrush="Transparent" Width="40"
+            Height="40" Margin="2,4,2,2"/>
+
+        </ToolBarPanel>
+
+
+
+
+        <TabControl Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="Transparent" 
+                    Name="tabControl" Visibility="Visible"></TabControl>
+    
+    
+    
     </Grid>
 </Window>

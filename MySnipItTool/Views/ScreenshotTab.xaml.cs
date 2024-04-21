@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using WpfMath.Controls;
+//using WpfMath.Controls;
 
 namespace MySnipItTool
 {
@@ -23,7 +23,6 @@ namespace MySnipItTool
     /// This class represents a single screenshot tab, and should handle the logic.
     /// The drawing state is represented through the DrawingMode enum:
     /// { None, Eraser, FreeDraw, Line, Rectangle, Circle, Polygon, Text, Equation, Select }
-    /// 
     /// </summary>
     public partial class ScreenshotTab : UserControl
     {
@@ -402,6 +401,14 @@ namespace MySnipItTool
                     polyLine.Points.Add(e.GetPosition(canvas));
                     break;
                 case DrawingMode.Line:
+                    line = new Line();
+                    SetStrokeProperties(line);
+                    line.X1 = e.GetPosition(canvas).X;
+                    line.Y1 = e.GetPosition(canvas).Y;
+                    line.X2 = e.GetPosition(canvas).X;
+                    line.Y2 = e.GetPosition(canvas).Y;
+                    canvas.Children.Add(line);
+                    currentlyDrawingShape = line;
                     break;
                 case DrawingMode.Rectangle:
                     rectangle = new Rectangle();
@@ -436,6 +443,19 @@ namespace MySnipItTool
                 case DrawingMode.Polygon:
                     break;
                 case DrawingMode.Text:
+                    textBox = new TextBox();
+                    textBox.BorderBrush = new SolidColorBrush(Colors.Black);
+                    textBox.BorderThickness = new Thickness(4);
+                    
+                    Canvas.SetLeft(textBox, e.GetPosition(canvas).X);
+                    Canvas.SetTop(textBox, e.GetPosition(canvas).Y);
+                    canvas.Children.Add(textBox);
+                    Dispatcher.BeginInvoke(
+                                    DispatcherPriority.ContextIdle,
+                                    new Action(delegate ()
+                                    {
+                                        textBox.Focus();
+                                    }));
                     break;
                 case DrawingMode.Equation:
                     break;
@@ -668,7 +688,7 @@ namespace MySnipItTool
 
         private void SetStrokeProperties(Shape shape)
         {
-            // shape.MouseEnter += OnMouseOver;
+            shape.MouseEnter += OnMouseOver;
 
             shape.Stroke = new SolidColorBrush(mainWindow.color);
             shape.Fill = new SolidColorBrush(Colors.Transparent);
@@ -753,17 +773,17 @@ namespace MySnipItTool
         // This is our eraser event.
         // It simply removes the element from the object when the tool selected
         // is the eraser tool and we have the mouse down.
-        /*private void OnMouseOver(object sender, MouseEventArgs e)
+        private void OnMouseOver(object sender, MouseEventArgs e)
         {
-            if ((e.LeftButton == MouseButtonState.Pressed) && (mainWindow.mainMode == MainMode.Erase))
+            if ((e.LeftButton == MouseButtonState.Pressed) && (mainWindow.drawingMode == DrawingMode.Eraser))
             {
                 canvas.Children.Remove(sender as UIElement);
             }
-            else if ((e.LeftButton == MouseButtonState.Pressed) && (mainWindow.mainMode == MainMode.Select))
+            /*else if ((e.LeftButton == MouseButtonState.Pressed) && (mainWindow.mainMode == MainMode.Select))
             {
 
-            }
-        }*/
+            }*/
+        }
 
         private Polygon CreatePolygon(double radius, int numSides, Point center)
         {

@@ -95,6 +95,6 @@ C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\bin\Debug\System
 C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXManagerLibrary.csproj.AssemblyReference.cache
 C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXManagerLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXManagerLibrary.csproj.CopyComplete
+C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXMan.6A54AEEF.Up2Date
 C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXManagerLibrary.dll
 C:\Users\Zach\Documents\GitHub\MySnipItTool\LaTeXManagerLibrary\obj\Debug\LaTeXManagerLibrary.pdb

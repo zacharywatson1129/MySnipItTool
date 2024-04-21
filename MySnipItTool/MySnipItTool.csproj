@@ -77,9 +77,6 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
-    <Reference Include="WpfMath, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WpfMath.0.8.0\lib\net452\WpfMath.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -94,16 +91,13 @@
     <Compile Include="LogEntry.cs" />
     <Compile Include="LogUtil.cs" />
     <Compile Include="DesignerItemDecorator.cs" />
+    <Compile Include="Models\RectangleModel.cs" />
     <Compile Include="MoveThumb.cs" />
     <Compile Include="ResizeThumb.cs" />
     <Compile Include="RotateThumb.cs" />
     <Compile Include="ScreenshotHelper.cs" />
     <Compile Include="SelectionBounds.cs" />
-    <Compile Include="ViewModels\LaTeXEquationManagerViewModel.cs" />
     <Compile Include="ViewModels\ScreenshotTabViewModel.cs" />
-    <Compile Include="Views\LaTeXEquationManager.xaml.cs">
-      <DependentUpon>LaTeXEquationManager.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ScreenshotModeSelection.xaml.cs">
       <DependentUpon>ScreenshotModeSelection.xaml</DependentUpon>
     </Compile>
@@ -119,12 +113,20 @@
     <Compile Include="Views\ShapePropertiesPanel.xaml.cs">
       <DependentUpon>ShapePropertiesPanel.xaml</DependentUpon>
     </Compile>
-    <Resource Include="Images\Icons\icons8-screenshot-40.png" />
-    <Resource Include="Images\Icons\icons8-copy-40.png" />
-    <Resource Include="Images\Icons\icons8-save-40.png" />
-    <Resource Include="Images\Icons\icons8-trash-can-40.png" />
+    <Resource Include="Images\Icons\text-64.png" />
+    <Resource Include="Images\Icons\trash-32.png" />
+    <Resource Include="Images\Icons\trash-48.png" />
+    <Resource Include="Images\Icons\trash-64.png" />
+    <Resource Include="Images\Icons\save-32.png" />
+    <Resource Include="Images\Icons\save-48.png" />
+    <Resource Include="Images\Icons\save-64.png" />
+    <Resource Include="Images\Icons\circle-32.png" />
+    <Resource Include="Images\Icons\circle-48.png" />
+    <Resource Include="Images\Icons\circle-64.png" />
+    <Resource Include="Images\Icons\erase-32.png" />
+    <Resource Include="Images\Icons\erase-48.png" />
+    <Resource Include="Images\Icons\erase-64.png" />
     <Resource Include="Images\Icons\icons8-formula-fx-40.png" />
-    <Resource Include="Images\Icons\icons8-erase-40.png" />
     <Resource Include="Images\Icons\icons8-rectangle-40.png" />
     <Resource Include="Images\Icons\icons8-text-box-40.png" />
     <Resource Include="Images\pencil48.png" />
@@ -161,10 +163,6 @@
     <Page Include="Views\drawing.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\LaTeXEquationManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -258,16 +256,6 @@
     <Resource Include="MIT_License.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DrawingShapesLibrary\DrawingShapesLibrary.csproj">
-      <Project>{942b9f1c-0eba-4c1f-832b-f61884a06ba7}</Project>
-      <Name>DrawingShapesLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LaTeXManagerLibrary\LaTeXManagerLibrary.csproj">
-      <Project>{09A29BA5-01E1-4B96-AD06-584D49E1AFB5}</Project>
-      <Name>LaTeXManagerLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Delete.png" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\drawing.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DrawingShapesLibrary\DrawingShapesLibrary.csproj">
+      <Project>{942b9f1c-0eba-4c1f-832b-f61884a06ba7}</Project>
+      <Name>DrawingShapesLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

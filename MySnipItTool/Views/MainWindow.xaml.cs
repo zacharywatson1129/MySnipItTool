@@ -27,6 +27,7 @@ namespace MySnipItTool
         public MainWindow()
         {
             InitializeComponent();
+            drawingToolsPanel.Visibility = Visibility.Hidden;
         }
 
         public Color color;

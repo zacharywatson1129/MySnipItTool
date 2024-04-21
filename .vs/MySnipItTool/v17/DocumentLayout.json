@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|c:\\users\\zach\\documents\\github\\mysnipittool\\mysnipittool\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|solutionrelative:mysnipittool\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\mysnipittool\\views\\screenshottab.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|solutionrelative:mysnipittool\\views\\screenshottab.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\mysnipittool\\views\\screenshottab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6DF52F77-286F-4CCA-9920-FDA5E31C9260}|MySnipItTool\\MySnipItTool.csproj|solutionrelative:mysnipittool\\views\\screenshottab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScreenshotTab.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\ScreenshotTab.xaml.cs",
+              "RelativeDocumentMoniker": "MySnipItTool\\Views\\ScreenshotTab.xaml.cs",
+              "ToolTip": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\ScreenshotTab.xaml.cs",
+              "RelativeToolTip": "MySnipItTool\\Views\\ScreenshotTab.xaml.cs",
+              "ViewState": "AQIAALABAAAAfJqZmRkqwMIBAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T17:36:26.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScreenshotTab.xaml",
+              "DocumentMoniker": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\ScreenshotTab.xaml",
+              "RelativeDocumentMoniker": "MySnipItTool\\Views\\ScreenshotTab.xaml",
+              "ToolTip": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\ScreenshotTab.xaml",
+              "RelativeToolTip": "MySnipItTool\\Views\\ScreenshotTab.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-17T17:36:21.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MySnipItTool\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Zach\\Documents\\GitHub\\MySnipItTool\\MySnipItTool\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "MySnipItTool\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-15T16:57:38.554Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
