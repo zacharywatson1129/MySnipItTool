@@ -14,17 +14,17 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="mysnipittool.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1"/>
-        <TextBlock Text="MySnipItTool" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Margin="2" 
-            Text="MySnipItTool is a free, open source screen capture application running under the MIT license. Developed for Windows, it is designed to be a lightweight replacement for the Snipping Tool." 
+        <Image Width="80" Grid.RowSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1" Source="/mysnipittool.png"/>
+        <TextBlock Text="MySnipItTool" Grid.ColumnSpan="2" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Margin="2"
             Grid.Row="1" Grid.Column="2" TextWrapping="Wrap">
             <!--<Hyperlink NavigateUri="https://github.com/zacharywatson1129/MySnipItTool"/>-->
-            MySnipItTool is a free, open source screen capture application running under the MIT license. Developed for Windows, it is designed to be a lightweight replacement for the Snipping Tool.
-            The project can be found here:  <Hyperlink NavigateUri="https://github.com/zacharywatson1129/MySnipItTool" RequestNavigate="Hyperlink_RequestNavigate">here</Hyperlink>
+            MySnipItTool is a free, open source screenshot application running under the MIT license. Developed for Windows, it is designed to be a lightweight replacement for the Snipping Tool.
+            A multitabular application, it offers most all of the basic drawing tools and features needed to boost productivity.
+            The project can be found <Hyperlink NavigateUri="https://github.com/zacharywatson1129/MySnipItTool" RequestNavigate="Hyperlink_RequestNavigate">here</Hyperlink>.
         </TextBlock>
         
 

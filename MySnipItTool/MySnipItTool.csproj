@@ -113,6 +113,9 @@
     <Compile Include="Views\ShapePropertiesPanel.xaml.cs">
       <DependentUpon>ShapePropertiesPanel.xaml</DependentUpon>
     </Compile>
+    <Resource Include="rect1 %281%29.ico" />
+    <Resource Include="mysnipittool.png" />
+    <Resource Include="rect1.ico" />
     <Resource Include="Images\Icons\text-64.png" />
     <Resource Include="Images\Icons\trash-32.png" />
     <Resource Include="Images\Icons\trash-48.png" />

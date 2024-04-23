@@ -32,11 +32,8 @@ C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\MySnipItToo
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\MySnipItTool.exe
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\MySnipItTool.pdb
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\DrawingShapesLibrary.dll
-C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\LaTeXManagerLibrary.dll
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\System.Windows.Interactivity.dll
-C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\WpfMath.dll
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\DrawingShapesLibrary.pdb
-C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\LaTeXManagerLibrary.pdb
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\bin\Release\ScreenshotUtil.xml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\MySnipItTool.csproj.AssemblyReference.cache
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Images\pencil.baml
@@ -44,7 +41,6 @@ C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\drawi
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ScreenshotModeSelection.g.cs
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ShapePropertiesPanel.g.cs
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\AboutPage.g.cs
-C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\LaTeXEquationManager.g.cs
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\MainWindow.g.cs
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ScreenshotTab.g.cs
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\SettingsDialog.g.cs
@@ -58,7 +54,6 @@ C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\App.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ScreenshotModeSelection.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ShapePropertiesPanel.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\AboutPage.baml
-C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\LaTeXEquationManager.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\MainWindow.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\Views\ScreenshotTab.baml
 C:\Users\Zach\Documents\GitHub\MySnipItTool\MySnipItTool\obj\Release\SettingsDialog.baml

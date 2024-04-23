@@ -7,7 +7,8 @@
         xmlns:vms="clr-namespace:MySnipItTool.ViewModels"
         mc:Ignorable="d" FontSize="16" Background="Silver"
         Title="MySnipItTool" Height="500" Width="800" Loaded="Window_Loaded" 
-        Keyboard.KeyDown="Window_KeyDown" FontFamily="Segoe UI">
+        Keyboard.KeyDown="Window_KeyDown" FontFamily="Segoe UI" Icon="/rect1 (1).ico"
+        >
     <Window.Resources>
         <Style x:Key="ToolBarButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
