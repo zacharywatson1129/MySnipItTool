@@ -37,7 +37,7 @@ namespace MySnipItTool
         }
 
         public Color color;
-        private double strokeThickness;
+        public double strokeThickness { get; private set; } = 5;
         public DrawingMode drawingMode { get; set; } = DrawingMode.None;
 
         public bool EnableDrawingControls
@@ -565,6 +565,34 @@ namespace MySnipItTool
         private void btnErase_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void radioBtnSkinny_Click(object sender, RoutedEventArgs e)
+        {
+            strokeThickness = 1;
+        }
+
+        private void radioBtnNormal_Click(object sender, RoutedEventArgs e)
+        {
+            strokeThickness = 5;
+        }
+
+        private void radioBtnThick_Click(object sender, RoutedEventArgs e)
+        {
+            strokeThickness = 10;
+        }
+
+        // 0 indicates round, 1 indicates square
+        public int CapEndType { get; private set; } = 0;
+
+        private void radioBtnRound_Click(object sender, RoutedEventArgs e)
+        {
+            CapEndType = 0;
+        }
+
+        private void radioBtnSquare_Click(object sender, RoutedEventArgs e)
+        {
+            CapEndType = 1;
         }
     }
 }

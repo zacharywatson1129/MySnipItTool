@@ -6,28 +6,28 @@ This makes dealing with lots of screenshots and multitasking easier.
 
 - [Features](#features)
 - [Contributing](#contributing)
-- [History](#history)
+- [History (for Developers)](#history)
 - [License](#license)
 
 ## Features
 
-- Simple interface
+- Simple, easy-to-learn user interface
 - Full screenshots or screen snippets
-- Editing of screenshots via basic drawing tools
+- Annotation of screenshots via basic drawing tools
 - Multiple screenshots can be edited simultaneously in separate tabs
 
-## Contributing
-If you wish to contribute to making MySnipItTool better, you are free to simply clone the project and add the feature you see fit.
-The code is written in C#, and WPF is the chosen GUI framework.
+![Screenshot of MySnipItTool](Screenshot.png "Screenshot of MySnipItTool")
 
-## History
-Originally, the code was written using the Windows Forms (Winforms) GUI framework. The problem with drawing in Winforms is its
-ability to allow drawing on top of a picture--erasing will actually erase the picture, for example--so I scratched that idea and
-rebuilt MySnipItTool using WPF (Windows Presentation Foundation). It allowed for more flexibility in improving the user interface
-and adding my own custom icons.
+## Contributing
+If you wish to contribute to making MySnipItTool better, you are free to simply clone the project and add the feature you see fit. The code is written in C#, and WPF is the chosen GUI framework, so you just need Visual Studio with the desktop workload features installed. For the less tech-savvy or those not wanting to contribute code-wise, any suggestions/comments/feedback is also welcome.
+
+
+## History (for Developers)
+Originally, the code was written using the Windows Forms (Winforms) GUI framework. The problem with drawing in Winforms is drawing on top of a picture. You can easily draw on top of a picture, but erasing will actually erase the picture itself, there is no type of drawing control or control that would allow easy anchored positioning of GUI items. So, after building a working prototype with Windows Forms, and running into these roadblocks, I scratched the idea of using Winforms and
+rebuilt MySnipItTool using WPF (Windows Presentation Foundation). With WPF, I was able to use the magical Canvas control, which allows shapes and other items to be easily added on top. Additionally, with WPF, there was more flexibility in improving the user interface and compartmentalizing it into separate, reusable pieces. For example, the ScreenshotTab is its own UserControl, a Canvas, wrapped around an Image, with its own drawing logic.
 
 ## License
-MIT License.
+MySnipItTool operates under the MIT License.
 
 
 

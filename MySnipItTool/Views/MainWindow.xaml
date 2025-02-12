@@ -112,13 +112,13 @@
             <MenuItem Name="menuItemDrawing" Header="Drawing">
                 <MenuItem Header="Color" Click="btnColor_Click"/>
                 <MenuItem Name="penShapeMenuItem" Header="Pen Shape">
-                    <RadioButton Name="radioBtnRound">Round</RadioButton>
-                    <RadioButton Name="radioBtnSquare">Square</RadioButton>
+                    <RadioButton Name="radioBtnRound" Click="radioBtnRound_Click">Round</RadioButton>
+                    <RadioButton Name="radioBtnSquare" Click="radioBtnSquare_Click">Square</RadioButton>
                 </MenuItem>
                 <MenuItem Name="drawingThicknessMenuItem" Header="Drawing Thickness">
-                    <RadioButton Name="radioBtnSkinny">Skinny</RadioButton>
-                    <RadioButton Name="radioBtnNormal">Normal</RadioButton>
-                    <RadioButton Name="radioBtnThick">Thick</RadioButton>
+                    <RadioButton Name="radioBtnSkinny" Click="radioBtnSkinny_Click">Skinny</RadioButton>
+                    <RadioButton Name="radioBtnNormal" Click="radioBtnNormal_Click">Normal</RadioButton>
+                    <RadioButton Name="radioBtnThick" Click="radioBtnThick_Click">Thick</RadioButton>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="About">

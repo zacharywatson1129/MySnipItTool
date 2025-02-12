@@ -281,9 +281,10 @@ namespace MySnipItTool
             shape.MouseEnter += OnMouseOver;
 
             shape.Stroke = new SolidColorBrush(mainWindow.color);
+            shape.StrokeThickness = mainWindow.strokeThickness;
             shape.Fill = new SolidColorBrush(Colors.Transparent);
             // Set the stroke thickness
-            if (mainWindow.radioBtnNormal.IsChecked == true)
+            /*if (mainWindow.radioBtnNormal.IsChecked == true)
             {
                 shape.StrokeThickness = 7;
             }
@@ -294,14 +295,16 @@ namespace MySnipItTool
             else if (mainWindow.radioBtnThick.IsChecked == true)
             {
                 shape.StrokeThickness = 7;
-            }
+            }*/
             // Set the stroke end
-            if (mainWindow.radioBtnRound.IsChecked == true)
+            if (mainWindow.CapEndType == 0)
             {
+                shape.StrokeStartLineCap = PenLineCap.Round;
                 shape.StrokeEndLineCap = PenLineCap.Round;
             }
-            else if (mainWindow.radioBtnSquare.IsChecked == true)
+            else
             {
+                shape.StrokeStartLineCap = PenLineCap.Square;
                 shape.StrokeEndLineCap = PenLineCap.Square;
             }
         }
@@ -607,6 +610,7 @@ namespace MySnipItTool
             hasStartedDrawing = false;
             isSaved = false;
             scrollViewer.IsEnabled = true;
+            //MessageBox.Show("T")
         }
 
         private void CurrentlyDrawingShape_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
