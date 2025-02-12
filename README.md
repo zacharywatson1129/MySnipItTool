@@ -16,7 +16,7 @@ This makes dealing with lots of screenshots and multitasking easier.
 - Annotation of screenshots via basic drawing tools
 - Multiple screenshots can be edited simultaneously in separate tabs
 
-![Screenshot of MySnipItTool](Screenshot.JPG "Screenshot of MySnipItTool")
+<img src="Screenshot.JPG" alt="drawing" width="922"/>
 
 ## Contributing
 If you wish to contribute to making MySnipItTool better, you are free to simply clone the project and add the feature you see fit. The code is written in C#, and WPF is the chosen GUI framework, so you just need Visual Studio with the desktop workload features installed. For the less tech-savvy or those not wanting to contribute code-wise, any suggestions/comments/feedback is also welcome.
