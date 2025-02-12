@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/drawing.xaml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/drawing.svg")]
 
 

@@ -86,18 +86,8 @@
     <Compile Include="AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BoundsHolder.cs" />
     <Compile Include="Enums\DrawingMode.cs" />
-    <Compile Include="LogEntry.cs" />
-    <Compile Include="LogUtil.cs" />
-    <Compile Include="DesignerItemDecorator.cs" />
-    <Compile Include="Models\RectangleModel.cs" />
-    <Compile Include="MoveThumb.cs" />
-    <Compile Include="ResizeThumb.cs" />
-    <Compile Include="RotateThumb.cs" />
     <Compile Include="ScreenshotHelper.cs" />
-    <Compile Include="SelectionBounds.cs" />
-    <Compile Include="ViewModels\ScreenshotTabViewModel.cs" />
     <Compile Include="Views\ScreenshotModeSelection.xaml.cs">
       <DependentUpon>ScreenshotModeSelection.xaml</DependentUpon>
     </Compile>
@@ -113,9 +103,11 @@
     <Compile Include="Views\ShapePropertiesPanel.xaml.cs">
       <DependentUpon>ShapePropertiesPanel.xaml</DependentUpon>
     </Compile>
-    <Resource Include="rect1 %281%29.ico" />
+    <Resource Include="Views\mysnipittool-64.ico" />
+    <Resource Include="Images\mysnipittool-old.ico" />
+    <Resource Include="Images\mysnipittool-32.ico" />
+    <Resource Include="Images\mysnipittool-64.ico" />
     <Resource Include="mysnipittool.png" />
-    <Resource Include="rect1.ico" />
     <Resource Include="Images\Icons\text-64.png" />
     <Resource Include="Images\Icons\trash-32.png" />
     <Resource Include="Images\Icons\trash-48.png" />
@@ -129,10 +121,6 @@
     <Resource Include="Images\Icons\erase-32.png" />
     <Resource Include="Images\Icons\erase-48.png" />
     <Resource Include="Images\Icons\erase-64.png" />
-    <Resource Include="Images\Icons\icons8-formula-fx-40.png" />
-    <Resource Include="Images\Icons\icons8-rectangle-40.png" />
-    <Resource Include="Images\Icons\icons8-text-box-40.png" />
-    <Resource Include="Images\pencil48.png" />
     <Resource Include="Images\pencil20.png" />
     <Page Include="Images\pencil.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -159,10 +147,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="Images\drawing.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Content>
     <Page Include="Views\drawing.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,7 +159,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -211,7 +194,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="equations.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -224,54 +206,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\rectangle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\line.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\pencil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\down.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\up.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Eraser_24px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\circle.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Views\mysnipittool.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\save.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="MIT_License.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\selection.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fullscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logs\Log.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icons8_Text_24px.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -289,10 +229,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\rectangle2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Images\drawing.svg" />
+    <Resource Include="Images\Icons\pencil-32.png" />
+    <Resource Include="Images\Icons\pencil-48.png" />
+    <Resource Include="Images\Icons\pencil-64.png" />
+    <Resource Include="Images\pencil-48.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DrawingShapesLibrary\DrawingShapesLibrary.csproj">

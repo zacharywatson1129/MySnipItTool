@@ -32,10 +32,11 @@ namespace MySnipItTool
             InitializeComponent();
         }
 
-        public ScreenshotTab(BitmapImage screenshot, Window window)
+        public ScreenshotTab(BitmapSource screenshot, Window window)
         {
             InitializeComponent();
             imgControl.Source = screenshot;
+            
             imgControl.MaxWidth = screenshot.Width;
             imgControl.MaxHeight = screenshot.Height;
             canvas.Height = screenshot.Height;
@@ -45,8 +46,13 @@ namespace MySnipItTool
             canvas.MinWidth = screenshot.Width;
             canvas.MaxWidth = screenshot.Width;
             mainWindow = window as MainWindow;
-            selectedShapeBounds = new SelectionBounds(canvas, new Rectangle());
+
+            // MessageBox.Show($"The actual imgControl width is {imgControl.ActualWidth} and height is {imgControl.ActualHeight}");
+            //selectedShapeBounds = new SelectionBounds(canvas, new Rectangle());
         }
+
+        public int OriginalWidth { get; set; }
+        public int OriginalHeight { get; set; }
 
         public static readonly DependencyProperty ToolSelectedProperty =
             DependencyProperty.Register("ToolSelected", typeof(DrawingMode), typeof(ScreenshotTab));
@@ -119,7 +125,7 @@ namespace MySnipItTool
             }
         }
 
-        private List<BoundsHolder> bounds = new List<BoundsHolder>();
+        //private List<BoundsHolder> bounds = new List<BoundsHolder>();
         private double width = 20;
         private int counter = 0;
         private Thumb lineHolder;
@@ -153,230 +159,19 @@ namespace MySnipItTool
 
         bool isCurrentlyInBoundsOfAShape(MouseButtonEventArgs e)
         {
-            foreach (var b in bounds)
+            /*foreach (var b in bounds)
             {
                 if (isPositionInBounds(b.Bounds, e.GetPosition(canvas)))
                 {
                     return true;
                 }
-            }
+            }*/
             return false;
         }
 
         private Point OriginalSelectedPos;
         private Shape selectedShape;
-        private SelectionBounds selectedShapeBounds; //= new SelectionBounds(canvas, new Rectangle());
-
-        //private void imgControl_MouseDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    hasStartedDrawing = true;
-        //    Trace.WriteLine("Mouse down");
-
-        //    switch (mainWindow.mainMode)
-        //    {
-        //        case MainMode.Select:
-        //            {
-        //                MouseStart = e.GetPosition(canvas);
-
-        //                HitTestResult hitTestResult = VisualTreeHelper.HitTest(canvas, e.GetPosition(canvas));
-        //                if (hitTestResult != null)
-        //                {
-        //                    var element = hitTestResult.VisualHit;
-
-        //                    if (element is Rectangle)
-        //                    {
-        //                        /*
-        //                        Rectangle selectedRectangle = element as Rectangle;
-        //                        selectedShape = selectedRectangle;
-        //                        OriginalSelectedPos = new Point { X = Canvas.GetLeft(selectedRectangle), Y = Canvas.GetTop(selectedRectangle) };
-        //                        if (canvas.Children.Contains(selectedShapeBounds.MainBounds))
-        //                        {
-        //                            canvas.Children.Remove(selectedShapeBounds.MainBounds);
-        //                            canvas.Children.Remove(selectedShapeBounds.TopLeftSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.TopRightSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.BottomLeftSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.BottomRightSelector);
-        //                        }
-
-        //                        selectedShapeBounds = new SelectionBounds(selectedRectangle);
-
-        //                        // canvas.Children.Add(selectedShapeBounds.MainBounds);
-        //                        canvas.Children.Add(selectedShapeBounds.TopLeftSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.TopRightSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.BottomLeftSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.BottomRightSelector);
-
-        //                        Canvas.SetTop(selectedShapeBounds.MainBounds, Canvas.GetTop(selectedRectangle) - 5);
-        //                        Canvas.SetLeft(selectedShapeBounds.MainBounds, Canvas.GetLeft(selectedRectangle) - 5);
-
-        //                        Canvas.SetTop(selectedShapeBounds.TopLeftSelector, Canvas.GetTop(selectedShapeBounds.MainBounds) - 3);
-        //                        Canvas.SetLeft(selectedShapeBounds.TopLeftSelector, Canvas.GetLeft(selectedShapeBounds.MainBounds) - 3);
-
-        //                        Canvas.SetTop(selectedShapeBounds.TopRightSelector, Canvas.GetTop(selectedShapeBounds.MainBounds) - 3);
-        //                        Canvas.SetLeft(selectedShapeBounds.TopRightSelector, (Canvas.GetLeft(selectedShapeBounds.MainBounds) + selectedShapeBounds.MainBounds.Width) - 6);
-
-        //                        Canvas.SetTop(selectedShapeBounds.BottomLeftSelector, (Canvas.GetTop(selectedRectangle) - 12) + selectedShapeBounds.MainBounds.Height);
-        //                        Canvas.SetLeft(selectedShapeBounds.BottomLeftSelector, Canvas.GetLeft(selectedShapeBounds.MainBounds) - 3);
-        //                        */
-        //                        /*Rectangle selectedRect = element as Rectangle;
-        //                        mainBounds.Width = selectedRect.Width + 10;
-        //                        mainBounds.Height = selectedRect.Height + 10;
-
-        //                        topLeftBounds.Width = 3;
-        //                        topLeftBounds.Height = 3;
-        //                        topLeftBounds.Stroke = new SolidColorBrush(Colors.Blue);
-        //                        topRight.Stroke = new SolidColorBrush(Colors.Blue);
-        //                        botLeftBounds.Stroke = new SolidColorBrush(Colors.Blue);
-        //                        botRightBounds.Stroke = new SolidColorBrush(Colors.Blue);
-
-        //                        canvas.Children.Add(mainBounds);
-        //                        canvas.Children.Add(topLeftBounds);
-        //                        canvas.Children.Add(topRight);
-        //                        canvas.Children.Add(botLeftBounds);
-        //                        canvas.Children.Add(botRightBounds);
-
-        //                        Canvas.SetTop(mainBounds, Canvas.GetTop(selectedRect) - 5);
-        //                        Canvas.SetLeft(mainBounds, Canvas.GetLeft(selectedRect) - 5);
-
-        //                        Canvas.SetTop(topLeftBounds, Canvas.GetTop(selectedRect) - 8);
-        //                        Canvas.SetLeft(topLeftBounds, Canvas.GetLeft(selectedRect) - 8);
-
-
-        //                        mainBounds.StrokeDashCap = PenLineCap.Flat;
-        //                        mainBounds.StrokeLineJoin = PenLineJoin.Bevel;
-        //                        mainBounds.StrokeThickness = 3;
-        //                        mainBounds.Stroke = new SolidColorBrush(Colors.Gray);*/
-        //                    }
-        //                    if (element is Ellipse)
-        //                    {
-
-        //                        Ellipse selectedEllipse = element as Ellipse;
-        //                        selectedShape = selectedEllipse;
-        //                        OriginalSelectedPos = new Point { X = Canvas.GetLeft(selectedEllipse), Y = Canvas.GetTop(selectedEllipse) };
-
-        //                        if (canvas.Children.Contains(selectedShapeBounds.MainBounds))
-        //                        {
-        //                            selectedShapeBounds.reset();
-        //                            /*canvas.Children.Remove(selectedShapeBounds.MainBounds);
-        //                            canvas.Children.Remove(selectedShapeBounds.TopLeftSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.TopRightSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.BottomLeftSelector);
-        //                            canvas.Children.Remove(selectedShapeBounds.BottomRightSelector);*/
-        //                        }
-
-        //                        selectedShapeBounds = new SelectionBounds(canvas, selectedEllipse);
-
-        //                        /*canvas.Children.Add(selectedShapeBounds.MainBounds);
-        //                        canvas.Children.Add(selectedShapeBounds.TopLeftSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.TopRightSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.BottomLeftSelector);
-        //                        canvas.Children.Add(selectedShapeBounds.BottomRightSelector);*/
-
-
-
-        //                    }
-        //                    if (element is Polyline)
-        //                    {
-        //                        Selector.SetIsSelected(element, true);
-        //                    }
-        //                }
-        //                break;
-        //            }
-        //        case MainMode.Draw:
-        //            {
-        //                switch (mainWindow.drawingMode)
-        //                {
-        //                    case DrawingMode.Circle:
-        //                        circle = new Ellipse();
-        //                        currentlyDrawingShape = circle;
-        //                        SetStrokeProperties(circle);
-        //                        startPoint = e.GetPosition(canvas);
-        //                        endPoint = e.GetPosition(canvas);
-        //                        Canvas.SetLeft(circle, startPoint.X);
-        //                        Canvas.SetTop(circle, startPoint.Y);
-        //                        canvas.Children.Add(circle);
-        //                        break;
-        //                    case DrawingMode.Equation:
-        //                        // TODO - Replace this code with actual code that loads the LaTeXEquationManager window.
-        //                        FormulaControl control = new FormulaControl();
-        //                        control.Formula = @"\left(x^2 + 2 \cdot x + 2\right) = 0";
-        //                        canvas.Children.Add(control);
-        //                        Canvas.SetTop(control, e.GetPosition(canvas).Y);
-        //                        Canvas.SetLeft(control, e.GetPosition(canvas).X);
-        //                        break;
-        //                    case DrawingMode.FreeDraw:
-        //                        polyLine = new Polyline();
-        //                        polyLine.StrokeMiterLimit = 1;
-        //                        currentlyDrawingShape = polyLine;
-        //                        SetStrokeProperties(polyLine);
-        //                        polyLine.Points.Add(e.GetPosition(canvas));
-        //                        canvas.Children.Add(polyLine);
-        //                        break;
-        //                    case DrawingMode.Line:
-        //                        line = new Line();
-        //                        currentlyDrawingShape = line;
-        //                        SetStrokeProperties(line);
-        //                        line.X1 = e.GetPosition(canvas).X;
-        //                        line.Y1 = e.GetPosition(canvas).Y;
-        //                        line.X2 = e.GetPosition(canvas).X;
-        //                        line.Y2 = e.GetPosition(canvas).Y;
-        //                        canvas.Children.Add(line);
-        //                        break;
-        //                    case DrawingMode.Rectangle:
-        //                        rectangle = new Rectangle();
-        //                        currentlyDrawingShape = rectangle;
-        //                        ContextMenu cm = new ContextMenu();
-        //                        // cm.Items.Add(new ShapePropertiesPanel());
-        //                        // cm.Items.Add(new Label() { Content = "hello" });
-
-        //                        rectangle.ContextMenu = cm;
-
-        //                        // TODO - add context menu to all of these items
-        //                        // 1. Set Fill
-        //                        // 2. Set Border
-        //                        // rectangle.ContextMenu.Items.Add(new TextBlock() { Text = "Testing..." });
-        //                        SetStrokeProperties(rectangle);
-        //                        startPoint = e.GetPosition(canvas);
-        //                        endPoint = e.GetPosition(canvas);
-        //                        Canvas.SetLeft(rectangle, startPoint.X);
-        //                        Canvas.SetTop(rectangle, startPoint.Y);
-        //                        canvas.Children.Add(rectangle);
-        //                        break;
-        //                    case DrawingMode.Polygon:
-        //                        polygon = CreatePolygon(width, 8, e.GetPosition(canvas));
-        //                        polygon.Stroke = new SolidColorBrush(Colors.Purple);
-        //                        startPoint = e.GetPosition(canvas);
-        //                        endPoint = e.GetPosition(canvas);
-        //                        canvas.Children.Add(polygon);
-        //                        break;
-        //                    case DrawingMode.Text:
-        //                        startPoint = e.GetPosition(canvas);
-        //                        endPoint = e.GetPosition(canvas);
-        //                        textBox = new TextBox();
-        //                        textBox.Width = 100;
-        //                        textBox.Height = 200;
-        //                        textBox.MouseEnter += OnMouseOver;
-        //                        textBox.BorderBrush = new SolidColorBrush(Colors.Transparent);
-        //                        textBox.Background = new SolidColorBrush(Colors.Transparent);
-        //                        Canvas.SetLeft(textBox, startPoint.X);
-        //                        Canvas.SetTop(textBox, startPoint.Y);
-        //                        canvas.Children.Add(textBox);
-        //                        // I don't know what this does, but it fixes the issue of
-        //                        // the textbox not being put into focus.
-        //                        Dispatcher.BeginInvoke(
-        //                            DispatcherPriority.ContextIdle,
-        //                            new Action(delegate ()
-        //                            {
-        //                                textBox.Focus();
-        //                            }));
-        //                        textBox.MouseRightButtonDown += TextBox_MouseRightButtonDown;
-        //                        // currentlyDrawingShape = textBox;
-        //                        break;
-        //                }
-        //                break;
-        //            }
-        //    }
-        //}
+        //private SelectionBounds selectedShapeBounds; //= new SelectionBounds(canvas, new Rectangle());
 
         /// <summary>
         /// This is actually the mouse down event associated with the canvas.
@@ -446,7 +241,8 @@ namespace MySnipItTool
                     textBox = new TextBox();
                     textBox.BorderBrush = new SolidColorBrush(Colors.Black);
                     textBox.BorderThickness = new Thickness(4);
-                    
+                    textBox.MouseEnter += OnMouseOver;
+
                     Canvas.SetLeft(textBox, e.GetPosition(canvas).X);
                     Canvas.SetTop(textBox, e.GetPosition(canvas).Y);
                     canvas.Children.Add(textBox);
@@ -464,214 +260,8 @@ namespace MySnipItTool
                 default:
                     break;
             }
-
-            /*switch (mainWindow.mainMode)
-            {
-                case MainMode.Select:
-                    {
-                        MouseStart = e.GetPosition(canvas);
-
-                        HitTestResult hitTestResult = VisualTreeHelper.HitTest(canvas, e.GetPosition(canvas));
-                        if (hitTestResult != null)
-                        {
-                            var element = hitTestResult.VisualHit;
-
-                            if (element is Rectangle)
-                            {*/
-                                /*
-                                Rectangle selectedRectangle = element as Rectangle;
-                                selectedShape = selectedRectangle;
-                                OriginalSelectedPos = new Point { X = Canvas.GetLeft(selectedRectangle), Y = Canvas.GetTop(selectedRectangle) };
-                                if (canvas.Children.Contains(selectedShapeBounds.MainBounds))
-                                {
-                                    canvas.Children.Remove(selectedShapeBounds.MainBounds);
-                                    canvas.Children.Remove(selectedShapeBounds.TopLeftSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.TopRightSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.BottomLeftSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.BottomRightSelector);
-                                }
-
-                                selectedShapeBounds = new SelectionBounds(selectedRectangle);
-
-                                // canvas.Children.Add(selectedShapeBounds.MainBounds);
-                                canvas.Children.Add(selectedShapeBounds.TopLeftSelector);
-                                canvas.Children.Add(selectedShapeBounds.TopRightSelector);
-                                canvas.Children.Add(selectedShapeBounds.BottomLeftSelector);
-                                canvas.Children.Add(selectedShapeBounds.BottomRightSelector);
-
-                                Canvas.SetTop(selectedShapeBounds.MainBounds, Canvas.GetTop(selectedRectangle) - 5);
-                                Canvas.SetLeft(selectedShapeBounds.MainBounds, Canvas.GetLeft(selectedRectangle) - 5);
-
-                                Canvas.SetTop(selectedShapeBounds.TopLeftSelector, Canvas.GetTop(selectedShapeBounds.MainBounds) - 3);
-                                Canvas.SetLeft(selectedShapeBounds.TopLeftSelector, Canvas.GetLeft(selectedShapeBounds.MainBounds) - 3);
-
-                                Canvas.SetTop(selectedShapeBounds.TopRightSelector, Canvas.GetTop(selectedShapeBounds.MainBounds) - 3);
-                                Canvas.SetLeft(selectedShapeBounds.TopRightSelector, (Canvas.GetLeft(selectedShapeBounds.MainBounds) + selectedShapeBounds.MainBounds.Width) - 6);
-
-                                Canvas.SetTop(selectedShapeBounds.BottomLeftSelector, (Canvas.GetTop(selectedRectangle) - 12) + selectedShapeBounds.MainBounds.Height);
-                                Canvas.SetLeft(selectedShapeBounds.BottomLeftSelector, Canvas.GetLeft(selectedShapeBounds.MainBounds) - 3);
-                                */
-                                /*Rectangle selectedRect = element as Rectangle;
-                                mainBounds.Width = selectedRect.Width + 10;
-                                mainBounds.Height = selectedRect.Height + 10;
-
-                                topLeftBounds.Width = 3;
-                                topLeftBounds.Height = 3;
-                                topLeftBounds.Stroke = new SolidColorBrush(Colors.Blue);
-                                topRight.Stroke = new SolidColorBrush(Colors.Blue);
-                                botLeftBounds.Stroke = new SolidColorBrush(Colors.Blue);
-                                botRightBounds.Stroke = new SolidColorBrush(Colors.Blue);
-
-                                canvas.Children.Add(mainBounds);
-                                canvas.Children.Add(topLeftBounds);
-                                canvas.Children.Add(topRight);
-                                canvas.Children.Add(botLeftBounds);
-                                canvas.Children.Add(botRightBounds);
-
-                                Canvas.SetTop(mainBounds, Canvas.GetTop(selectedRect) - 5);
-                                Canvas.SetLeft(mainBounds, Canvas.GetLeft(selectedRect) - 5);
-
-                                Canvas.SetTop(topLeftBounds, Canvas.GetTop(selectedRect) - 8);
-                                Canvas.SetLeft(topLeftBounds, Canvas.GetLeft(selectedRect) - 8);
-
-
-                                mainBounds.StrokeDashCap = PenLineCap.Flat;
-                                mainBounds.StrokeLineJoin = PenLineJoin.Bevel;
-                                mainBounds.StrokeThickness = 3;
-                                mainBounds.Stroke = new SolidColorBrush(Colors.Gray);*/
-                           /* }
-                            if (element is Ellipse)
-                            {
-
-                                Ellipse selectedEllipse = element as Ellipse;
-                                selectedShape = selectedEllipse;
-                                OriginalSelectedPos = new Point { X = Canvas.GetLeft(selectedEllipse), Y = Canvas.GetTop(selectedEllipse) };
-
-                                if (canvas.Children.Contains(selectedShapeBounds.MainBounds))
-                                {
-                                    selectedShapeBounds.reset();
-                                    /*canvas.Children.Remove(selectedShapeBounds.MainBounds);
-                                    canvas.Children.Remove(selectedShapeBounds.TopLeftSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.TopRightSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.BottomLeftSelector);
-                                    canvas.Children.Remove(selectedShapeBounds.BottomRightSelector);*/
         }
 
-                                //selectedShapeBounds = new SelectionBounds(canvas, selectedEllipse);
-
-                                /*canvas.Children.Add(selectedShapeBounds.MainBounds);
-                                canvas.Children.Add(selectedShapeBounds.TopLeftSelector);
-                                canvas.Children.Add(selectedShapeBounds.TopRightSelector);
-                                canvas.Children.Add(selectedShapeBounds.BottomLeftSelector);
-                                canvas.Children.Add(selectedShapeBounds.BottomRightSelector);*/
-
-
-
-                            /*}
-                            if (element is Polyline)
-                            {
-                                Selector.SetIsSelected(element, true);
-                            }
-                        }
-                        break;
-                    }
-                case MainMode.Draw:
-                    {
-                        switch (mainWindow.drawingMode)
-                        {
-                            case DrawingMode.Circle:
-                                circle = new Ellipse();
-                                currentlyDrawingShape = circle;
-                                SetStrokeProperties(circle);
-                                startPoint = e.GetPosition(canvas);
-                                endPoint = e.GetPosition(canvas);
-                                Canvas.SetLeft(circle, startPoint.X);
-                                Canvas.SetTop(circle, startPoint.Y);
-                                canvas.Children.Add(circle);
-                                break;
-                            case DrawingMode.Equation:
-                                // TODO - Replace this code with actual code that loads the LaTeXEquationManager window.
-                                FormulaControl control = new FormulaControl();
-                                control.Formula = @"\left(x^2 + 2 \cdot x + 2\right) = 0";
-                                canvas.Children.Add(control);
-                                Canvas.SetTop(control, e.GetPosition(canvas).Y);
-                                Canvas.SetLeft(control, e.GetPosition(canvas).X);
-                                break;
-                            case DrawingMode.FreeDraw:
-                                polyLine = new Polyline();
-                                polyLine.StrokeMiterLimit = 1;
-                                currentlyDrawingShape = polyLine;
-                                SetStrokeProperties(polyLine);
-                                polyLine.Points.Add(e.GetPosition(canvas));
-                                canvas.Children.Add(polyLine);
-                                break;
-                            case DrawingMode.Line:
-                                line = new Line();
-                                currentlyDrawingShape = line;
-                                SetStrokeProperties(line);
-                                line.X1 = e.GetPosition(canvas).X;
-                                line.Y1 = e.GetPosition(canvas).Y;
-                                line.X2 = e.GetPosition(canvas).X;
-                                line.Y2 = e.GetPosition(canvas).Y;
-                                canvas.Children.Add(line);
-                                break;
-                            case DrawingMode.Rectangle:
-                                rectangle = new Rectangle();
-                                currentlyDrawingShape = rectangle;
-                                ContextMenu cm = new ContextMenu();
-                                // cm.Items.Add(new ShapePropertiesPanel());
-                                // cm.Items.Add(new Label() { Content = "hello" });
-
-                                rectangle.ContextMenu = cm;
-
-                                // TODO - add context menu to all of these items
-                                // 1. Set Fill
-                                // 2. Set Border
-                                // rectangle.ContextMenu.Items.Add(new TextBlock() { Text = "Testing..." });
-                                SetStrokeProperties(rectangle);
-                                startPoint = e.GetPosition(canvas);
-                                endPoint = e.GetPosition(canvas);
-                                Canvas.SetLeft(rectangle, startPoint.X);
-                                Canvas.SetTop(rectangle, startPoint.Y);
-                                canvas.Children.Add(rectangle);
-                                break;
-                            case DrawingMode.Polygon:
-                                polygon = CreatePolygon(width, 8, e.GetPosition(canvas));
-                                polygon.Stroke = new SolidColorBrush(Colors.Purple);
-                                startPoint = e.GetPosition(canvas);
-                                endPoint = e.GetPosition(canvas);
-                                canvas.Children.Add(polygon);
-                                break;
-                            case DrawingMode.Text:
-                                startPoint = e.GetPosition(canvas);
-                                endPoint = e.GetPosition(canvas);
-                                textBox = new TextBox();
-                                textBox.Width = 100;
-                                textBox.Height = 200;
-                                textBox.MouseEnter += OnMouseOver;
-                                textBox.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                                textBox.Background = new SolidColorBrush(Colors.Transparent);
-                                Canvas.SetLeft(textBox, startPoint.X);
-                                Canvas.SetTop(textBox, startPoint.Y);
-                                canvas.Children.Add(textBox);
-                                // I don't know what this does, but it fixes the issue of
-                                // the textbox not being put into focus.
-                                Dispatcher.BeginInvoke(
-                                    DispatcherPriority.ContextIdle,
-                                    new Action(delegate ()
-                                    {
-                                        textBox.Focus();
-                                    }));
-                                textBox.MouseRightButtonDown += TextBox_MouseRightButtonDown;
-                                // currentlyDrawingShape = textBox;
-                                break;*//*
-                        }
-                        break;
-                    }*/
-            
-        //}
-
-        // TODO - find a way to make textbox right click work.
         private void TextBox_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             System.Windows.Forms.FontDialog dialog = new System.Windows.Forms.FontDialog();
@@ -721,54 +311,6 @@ namespace MySnipItTool
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
-
-        /*private void Shape_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-            if (mainWindow.mainMode == MainMode.Select)
-            {
-                this.Cursor = Cursors.SizeAll;
-            }
-            source = (UIElement)sender;
-            // selectedShapeBounds = new SelectionBounds(canvas, sender as Shape);
-            Mouse.Capture(source);
-            captured = true;
-            x_shape = Canvas.GetLeft(source);
-            x_canvas = e.GetPosition(canvas).X;
-            y_shape = Canvas.GetTop(source);
-            y_canvas = e.GetPosition(canvas).Y;
-        }
-        private void Shape_MouseMove(object sender, MouseEventArgs e)
-        {
-            // only do this if we are not drawing the shape.
-            // without this, the shape fires this event upon mouse release when drawing it.
-            if (captured && mainWindow.mainMode == MainMode.Select)
-            {
-                if (source is Shape)
-                {
-                    selectedShapeBounds.Update(source as Shape);
-                }
-                double x = e.GetPosition(canvas).X;
-                double y = e.GetPosition(canvas).Y;
-                x_shape += x - x_canvas;
-                Canvas.SetLeft(source, x_shape);
-                x_canvas = x;
-                y_shape += y - y_canvas;
-                Canvas.SetTop(source, y_shape);
-                y_canvas = y;
-            }
-        }
-
-        private void Shape_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Mouse.Capture(null);
-            captured = false;
-            this.Cursor = Cursors.Arrow;
-            if (source is Shape)
-            {
-                selectedShapeBounds.reset();
-            }
-        }*/
 
         // This is our eraser event.
         // It simply removes the element from the object when the tool selected
@@ -1112,19 +654,5 @@ namespace MySnipItTool
                 }*/
             }
         }
-
-        /*private void canvas_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.G)
-            {
-                if (mainWindow.mainMode == MainMode.Select)
-                {
-                    if (selectedShape != null)
-                    {
-                        this.moveMode = MoveMode.Free;
-                    }
-                }
-            }
-        }*/
     }
 }

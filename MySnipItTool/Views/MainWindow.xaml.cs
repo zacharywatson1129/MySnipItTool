@@ -4,6 +4,8 @@ using ScreenshotUtil;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+//using System.Drawing;
+
 // using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -13,7 +15,9 @@ using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 // TODO: 
 
@@ -22,12 +26,14 @@ namespace MySnipItTool
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         public MainWindow()
         {
             InitializeComponent();
             drawingToolsPanel.Visibility = Visibility.Hidden;
+
+            
         }
 
         public Color color;
@@ -42,22 +48,34 @@ namespace MySnipItTool
 
         private void TakeFullScreenshot(object sender, RoutedEventArgs e)
         {
+            // Hide the window so it is not captured in the screenshot.
             this.Hide();
             // Uses the stored value to sleep.
-            // This is so we don't capture the screenshot tool window in the screenshot :)
+            // This makes sure the window has time to actually hide before the screenshot is taken. :)
             Thread.Sleep(Properties.Settings.Default.Delay);
+            // We have to use System.Windows.Forms namespace to get the primaryscreen's width and height.
             int width = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
             int height = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
-            BitmapImage screenshot = ScreenshotConverter.ConvertToBitmapImage(ScreenshotUtility.TakeScreenshot(width, height, new System.Drawing.Point(0, 0)));
-            AddNewTab(screenshot);
+            BitmapSource screenshot = ScreenshotHelper.TakeScreenshot(0, 0, width, height);
+
+            // We're going to replace this:
+            // BitmapImage screenshot = ScreenshotConverter.ConvertToBitmapImage(ScreenshotUtility.TakeScreenshot(width, height, new System.Drawing.Point(0, 0)));
+            // BitmapImage screenshot = ScreenshotHelper.TakeScreenshot(0, 0, width, height);
+            AddNewTab((BitmapImage)screenshot);
             this.Show();
         }
 
-        private void AddNewTab(BitmapImage screenshot)
+
+        private void AddNewTab(BitmapSource screenshot)
         {
             // basicToolsPanel.Visibility = Visibility.Visible;
             // drawingToolsPanel.Visibility = Visibility.Visible;
-            TabItem item = new TabItem() { Header = GetDateAndTime(), Content = new ScreenshotTab(screenshot, this) };
+            ScreenshotTab tab = new ScreenshotTab(screenshot, this);
+            // Important step, I use this data for copying/saving.
+            tab.OriginalWidth = screenshot.PixelWidth;
+            tab.OriginalHeight = screenshot.PixelHeight;
+            TabItem item = new TabItem() { Header = GetDateAndTime(), Content = tab };
+            
             tabControl.Items.Add(item);
             TabCountChanged();
             tabControl.SelectedItem = item;
@@ -65,6 +83,7 @@ namespace MySnipItTool
             menuItemDrawing.IsEnabled = true;
             radioBtnNormal.IsChecked = true;
             radioBtnRound.IsChecked = true;
+            
         }
 
         public string GetDateAndTime()
@@ -256,6 +275,9 @@ namespace MySnipItTool
                 TabItem item = tabControl.SelectedItem as TabItem;
                 ScreenshotTab currentScreenshotTab = item.Content as ScreenshotTab;
 
+                int screenshotWidth = (int)currentScreenshotTab.canvas.ActualWidth;
+                int screenshotHeight = (int)currentScreenshotTab.canvas.ActualHeight;
+
                 // Now we show a SaveFileDialog
                 SaveFileDialog saveDialog = new SaveFileDialog();
                 // Add the image filters
@@ -265,13 +287,31 @@ namespace MySnipItTool
                 {
                     // This creates an image of the proper size and format, and then we render it using
                     // the inkcanvas.
-                    RenderTargetBitmap targetBitmap =
+                    /*RenderTargetBitmap targetBitmap =
                         new RenderTargetBitmap((int)currentScreenshotTab.canvas.ActualWidth,
                                                (int)currentScreenshotTab.canvas.ActualHeight,
                                                96d, 96d,
-                                               PixelFormats.Default);
-                    currentScreenshotTab.canvas.Measure(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height));
-                    currentScreenshotTab.canvas.Arrange(new Rect(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height)));
+                                               PixelFormats.Default);*/
+
+                    // Get the system's actual DPI
+                    System.Drawing.Graphics g = System.Drawing.Graphics.FromHwnd(IntPtr.Zero);
+                    float dpiX = g.DpiX;
+                    float dpiY = g.DpiY;
+
+                    // This makes it the actual size. 
+                    RenderTargetBitmap targetBitmap = new RenderTargetBitmap(
+                        currentScreenshotTab.OriginalWidth,
+                        currentScreenshotTab.OriginalHeight,
+                        dpiX,
+                        dpiY,
+                        PixelFormats.Default);
+
+                    currentScreenshotTab.canvas.Measure(new Size(screenshotWidth, screenshotHeight));
+                    currentScreenshotTab.canvas.Arrange(new Rect(new Size(screenshotWidth, screenshotHeight)));
+
+
+                    //currentScreenshotTab.canvas.Measure(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height));
+                    //currentScreenshotTab.canvas.Arrange(new Rect(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height)));
                     targetBitmap.Render(currentScreenshotTab.canvas);
 
                     // Now we need an encoder, set it as new BmpBitmapEncoder as a default.
@@ -281,6 +321,9 @@ namespace MySnipItTool
                     switch (extension.ToLower())
                     {
                         case ".jpg":
+                            encoder = new JpegBitmapEncoder();
+                            break;
+                        case ".jpeg":
                             encoder = new JpegBitmapEncoder();
                             break;
                         case ".bmp":
@@ -316,8 +359,8 @@ namespace MySnipItTool
             {
                 MessageBox.Show("Sorry, but there was an error saving the file to disk. Please see the log file for" +
                     "more details.");
-                LogEntry entry = new LogEntry(ex.Message, ex.StackTrace, DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
-                LogUtil.LogToFile("Logs/Log.txt", entry.ToStringArray());
+                //LogEntry entry = new LogEntry(ex.Message, ex.StackTrace, DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                //LogUtil.LogToFile("Logs/Log.txt", entry.ToStringArray());
             }
         }
 
@@ -350,24 +393,46 @@ namespace MySnipItTool
 
         private void CopyCurrentScreenshot(object sender, RoutedEventArgs e)
         {
-            //TabItem item = tabControl.SelectedItem as TabItem;
-            /*ScreenshotTab currentScreenshotTab = item.Content as ScreenshotTab;
+            TabItem item = tabControl.SelectedItem as TabItem;
+            ScreenshotTab currentScreenshotTab = item.Content as ScreenshotTab;
+
+            //int screenshotWidth = (int)currentScreenshotTab.Screenshot.Width;
+            //int screenshotHeight = (int)currentScreenshotTab.Screenshot.Height;
+
+            int screenshotWidth = (int)currentScreenshotTab.canvas.ActualWidth;
+            int screenshotHeight = (int)currentScreenshotTab.canvas.ActualHeight;
+
+            // Get the system's actual DPI
+            System.Drawing.Graphics g = System.Drawing.Graphics.FromHwnd(IntPtr.Zero);
+            float dpiX = g.DpiX;
+            float dpiY = g.DpiY;
+
+            // This gives an image that is scaled correctly, but cropped to bad size.
+            // This is because it uses screenshotWidth and screenshotHeight which aren't in the correct units (not physical pixels).
+            /*RenderTargetBitmap targetBitmap = new RenderTargetBitmap(
+                screenshotWidth,
+                screenshotHeight,
+                dpiX, 
+                dpiY,
+                PixelFormats.Default);*/
+
+            // This makes it the actual size. 
             RenderTargetBitmap targetBitmap = new RenderTargetBitmap(
-                (int)currentScreenshotTab.Screenshot.Width,
-                (int)currentScreenshotTab.Screenshot.Height,
-                96d, 
-                96d,
+                currentScreenshotTab.OriginalWidth,
+                currentScreenshotTab.OriginalHeight,
+                dpiX,
+                dpiY,
                 PixelFormats.Default);
 
-            currentScreenshotTab.canvas.Measure(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height));
-            currentScreenshotTab.canvas.Arrange(new Rect(new Size((int)currentScreenshotTab.canvas.Width, (int)currentScreenshotTab.canvas.Height)));
+            currentScreenshotTab.canvas.Measure(new Size(screenshotWidth, screenshotHeight));
+            currentScreenshotTab.canvas.Arrange(new Rect(new Size(screenshotWidth, screenshotHeight)));
 
             targetBitmap.Render(currentScreenshotTab.canvas);
 
             // CroppedBitmap crop = new CroppedBitmap(targetBitmap, new Int32Rect(0, 0, Convert.ToInt32(currentScreenshotTab.canvas.Width), Convert.ToInt32(currentScreenshotTab.canvas.Height)));
 
             BitmapFrame bitmapFrame = BitmapFrame.Create(targetBitmap);
-            Clipboard.SetImage(bitmapFrame);*/
+            Clipboard.SetImage(bitmapFrame);
         }
         System.Windows.Forms.NotifyIcon taskbarIcon;
 

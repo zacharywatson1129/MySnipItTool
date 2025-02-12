@@ -1,9 +1,10 @@
-﻿<Application x:Class="MySnipItTool.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:MySnipItTool"
-               xmlns:properties="clr-namespace:MySnipItTool.Properties"
-             StartupUri="Views\MainWindow.xaml">
+﻿<Application
+    x:Class="MySnipItTool.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MySnipItTool"
+    xmlns:properties="clr-namespace:MySnipItTool.Properties"
+    StartupUri="Views\MainWindow.xaml">
     <Application.Resources>
         <properties:Settings x:Key="Settings" />
     </Application.Resources>

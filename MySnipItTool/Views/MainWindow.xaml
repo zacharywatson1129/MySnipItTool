@@ -4,10 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MySnipItTool"
-        xmlns:vms="clr-namespace:MySnipItTool.ViewModels"
         mc:Ignorable="d" FontSize="16" Background="Silver"
         Title="MySnipItTool" Height="500" Width="800" Loaded="Window_Loaded" 
-        Keyboard.KeyDown="Window_KeyDown" FontFamily="Segoe UI" Icon="/rect1 (1).ico"
+        Keyboard.KeyDown="Window_KeyDown" FontFamily="Segoe UI" Icon="/Views/mysnipittool-64.ico"
         >
     <Window.Resources>
         <Style x:Key="ToolBarButtonStyle" TargetType="Button">
@@ -198,7 +197,7 @@
                 <Image Source="../Images/Icons/erase-48.png"/>
             </RadioButton>
             <RadioButton Name="btnFreeDraw" Click="btnFreeDraw_Click" Style="{StaticResource DrawingModeButtonStyle}">
-                <Image Source="../Images/pencil48.png" Width="40" Height="40"/>
+                <Image Source="../Images/Icons/pencil-48.png" Width="40" Height="40"/>
             </RadioButton>
             <RadioButton Name="btnLine" Click="btnLine_Click" Style="{StaticResource DrawingModeButtonStyle}">
                 <Line Fill="Black" Stroke="Black" StrokeThickness="3" X1="0" Y1="35"  X2="35" Y2="0"/>
