@@ -113,8 +113,12 @@ steps:
 
   - script: |
       echo "Tagging commit with ${{ parameters.version }}"
-      git config --global user.email "zacharywatson1129@gmail.com"
-      git config --global user.name "zacharywatson1129"
+
+      # Set the GitHub credentials using the token
+      git config --global credential.helper "store"
+      echo "https://$(GitHubToken)@github.com" > ~/.git-credentials
+
+      # Tag the commit
       git tag ${{ parameters.version }}
       git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
     displayName: 'Create and Push Git Tag'
