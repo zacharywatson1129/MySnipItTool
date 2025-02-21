@@ -34,7 +34,7 @@ steps:
     targetType: 'inline'
     script: |
       
-      $projectPath = '$(Build.SourcesDirectory)\MySnipItTool'
+      $projectPath = '$(Build.SourcesDirectory)'
 
       # List the contents of the Data directory for debugging
       Get-ChildItem -Path $projectPath -Recurse
@@ -42,14 +42,14 @@ steps:
 - task: VSBuild@1
   displayName: 'Clean and Build Library'
   inputs:
-    solution: 'MySnipItTool/DrawingShapesLibrary/DrawingShapesLibrary.csproj'
+    solution: '$(Build.SourcesDirectory)/DrawingShapesLibrary/DrawingShapesLibrary.csproj'
     configuration: '$(buildConfiguration)'
     msbuildArgs: '/t:Clean;Build'
 
 - task: VSBuild@1
   displayName: 'Build WPF Project'
   inputs:
-    solution: 'MySnipItTool/MySnipItTool/MySnipItTool.csproj'
+    solution: '$(Build.SourcesDirectory)/MySnipItTool/MySnipItTool.csproj'
     configuration: '$(buildConfiguration)'
 
 - task: PowerShell@2
