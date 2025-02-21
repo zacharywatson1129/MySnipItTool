@@ -59,7 +59,7 @@ steps:
     script: |
       echo "Zipping files..."
       $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
-      $binPath = '$(Build.SourcesDirectory)\PaintingDetailsManager\bin'
+      $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin'
 
       # Remove existing zip file if it exists
       if (Test-Path $outputPath) {
@@ -89,11 +89,9 @@ steps:
   displayName: 'Publish WPF Artifacts'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
-    ArtifactName: 'PaintingDetailsManager'
+    ArtifactName: 'MySnipItTool'
     publishLocation: 'Container'
     ArtifactType: 'Container'
-
-
 
 
 - task: GitHubRelease@1
