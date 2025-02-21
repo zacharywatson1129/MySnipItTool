@@ -111,17 +111,22 @@ steps:
           Write-Host "Tag does not exist. Proceeding..."
         }
 
-  - script: |
-      echo "Tagging commit with ${{ parameters.version }}"
-
-      # Set the GitHub credentials using the token
-      git config --global credential.helper "store"
-      echo "https://$(GitHubToken)@github.com" > ~/.git-credentials
-
-      # Tag the commit
-      git tag ${{ parameters.version }}
-      git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
+  - task: PowerShell@2
     displayName: 'Create and Push Git Tag'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Tagging the commit with the specified version
+        Write-Host "Tagging commit with ${{ parameters.version }}"
+
+        # Set up the GitHub credentials for pushing the tag
+        git config --global credential.helper "store"
+        echo "https://$(GitHubToken)@github.com" > ~/.git-credentials
+
+        # Create and push the Git tag
+        git tag ${{ parameters.version }}
+        git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
+
 
 
   - task: GitHubRelease@1
