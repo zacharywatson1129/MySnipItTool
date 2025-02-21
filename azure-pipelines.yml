@@ -121,11 +121,11 @@ steps:
 
         # Set up the GitHub credentials for pushing the tag
         git config --global credential.helper "store"
-        echo "https://$(GitHubToken)@github.com" > ~/.git-credentials
+        echo "https://$env:GITHUB_TOKEN@github.com" > ~/.git-credentials
 
         # Create and push the Git tag
         git tag ${{ parameters.version }}
-        git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
+        git push https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
 
 
 
