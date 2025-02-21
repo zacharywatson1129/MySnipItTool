@@ -83,13 +83,15 @@ steps:
     ArtifactType: 'Container'
 
 
-- task: GitHubRelease@0
-  inputs:
-    gitHubConnection: 'github.com_zacharywatson1129'  # Define your GitHub connection in the DevOps project settings
-    repositoryName: 'zacharywatson1129/MySnipItTool'
-    target: 'main'
-    tagSource: 'manual'  # You can also choose 'build' if you want it to auto-tag
-    tag: 'v$(Build.BuildId)'
-    title: 'Release $(Build.BuildId)'
-    assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
 
+
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'zacharywatson1129'
+    repositoryName: 'zacharywatson1129/MySnipItTool'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'commitBased'
+    assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
