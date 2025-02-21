@@ -102,13 +102,18 @@ steps:
     ArtifactType: 'Container'
 
 
-# Ensure the version tag does not already exist before tagging
-- script: |
-    if git ls-remote --tags origin | grep -q "refs/tags/${{ parameters.version }}"; then
-      echo "Error: Tag ${{ parameters.version }} already exists. Choose a new version."
-      exit 1
-    fi
+- task: PowerShell@2
   displayName: 'Check if Tag Exists'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $tagExists = git ls-remote --tags origin | Select-String "refs/tags/${{ parameters.version }}"
+      if ($tagExists) {
+          Write-Host "Tag ${{ parameters.version }} already exists. Exiting..."
+          exit 1
+      } else {
+          Write-Host "Tag does not exist. Proceeding..."
+      }
 
 # Create and Push Git Tag before release
 - script: |
