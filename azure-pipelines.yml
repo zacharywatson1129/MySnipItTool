@@ -4,134 +4,129 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 trigger:
-- main
+  - main
 
 pool:
   vmImage: 'windows-latest'
 
 variables:
+  group: GitHubSecrets  # This links the variable group to your pipeline
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 parameters:
-- name: version
-  displayName: 'Release Version (e.g., v1.0.0)'
-  type: string
-  default: 'v1.0.0'
+  - name: version
+    displayName: 'Release Version (e.g., v1.0.0)'
+    type: string
+    default: 'v1.0.0'
 
 steps:
-- checkout: self
+  - checkout: self
 
-- task: NuGetToolInstaller@1
-  displayName: 'Install NuGet'
+  - task: NuGetToolInstaller@1
+    displayName: 'Install NuGet'
 
-- task: NuGetCommand@2
-  displayName: 'Restore NuGet packages'
-  inputs:
-    command: 'restore'
-    restoreSolution: '$(solution)'
-    verbosityRestore: 'Detailed'
-    packagesDirectory: '$(Build.SourcesDirectory)\packages'
+  - task: NuGetCommand@2
+    displayName: 'Restore NuGet packages'
+    inputs:
+      command: 'restore'
+      restoreSolution: '$(solution)'
+      verbosityRestore: 'Detailed'
+      packagesDirectory: '$(Build.SourcesDirectory)\packages'
 
-- task: PowerShell@2
-  displayName: 'Print out main directory contents.'
-  inputs:
-    targetType: 'inline'
-    script: |
-      
-      $projectPath = '$(Build.SourcesDirectory)'
+  - task: PowerShell@2
+    displayName: 'Print out main directory contents.'
+    inputs:
+      targetType: 'inline'
+      script: |
+        $projectPath = '$(Build.SourcesDirectory)'
+        # List the contents of the Data directory for debugging
+        Get-ChildItem -Path $projectPath -Recurse
 
-      # List the contents of the Data directory for debugging
-      Get-ChildItem -Path $projectPath -Recurse
+  - task: VSBuild@1
+    displayName: 'Clean and Build Library'
+    inputs:
+      solution: '$(Build.SourcesDirectory)/DrawingShapesLibrary/DrawingShapesLibrary.csproj'
+      configuration: '$(buildConfiguration)'
+      msbuildArgs: '/t:Clean;Build'
 
-- task: VSBuild@1
-  displayName: 'Clean and Build Library'
-  inputs:
-    solution: '$(Build.SourcesDirectory)/DrawingShapesLibrary/DrawingShapesLibrary.csproj'
-    configuration: '$(buildConfiguration)'
-    msbuildArgs: '/t:Clean;Build'
+  - task: VSBuild@1
+    displayName: 'Build WPF Project'
+    inputs:
+      solution: '$(Build.SourcesDirectory)/MySnipItTool/MySnipItTool.csproj'
+      configuration: '$(buildConfiguration)'
 
-- task: VSBuild@1
-  displayName: 'Build WPF Project'
-  inputs:
-    solution: '$(Build.SourcesDirectory)/MySnipItTool/MySnipItTool.csproj'
-    configuration: '$(buildConfiguration)'
+  - task: PowerShell@2
+    displayName: 'Create Zip File'
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo "Zipping files..."
+        $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
+        $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin\Release'
 
-- task: PowerShell@2
-  displayName: 'Create Zip File'
-  inputs:
-    targetType: 'inline'
-    script: |
-      echo "Zipping files..."
-      $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
-      $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin\Release'
+        # Remove existing zip file if it exists
+        if (Test-Path $outputPath) {
+          Remove-Item $outputPath
+        }
 
-      # Remove existing zip file if it exists
-      if (Test-Path $outputPath) {
-        Remove-Item $outputPath
-      }
+        # List the contents of the Release directory inside bin for debugging
+        Get-ChildItem -Path $binPath -Recurse
 
-      # List the contents of the Release directory inside bin for debugging
-      Get-ChildItem -Path $binPath -Recurse
+        # Check if bin\Release folder exists
+        if (-Not (Test-Path $binPath)) {
+          Write-Host "Error: Bin/Release directory does not exist."
+          exit 1
+        }
 
-      # Check if bin\Release folder exists
-      if (-Not (Test-Path $binPath)) {
-        Write-Host "Error: Bin/Release directory does not exist."
-        exit 1
-      }
+        Compress-Archive -Path "$binPath" -DestinationPath $outputPath
+        echo "Zip file created at: $outputPath"
 
-      Compress-Archive -Path "$binPath" -DestinationPath $outputPath
+  - task: CmdLine@2
+    displayName: 'Check Zip File Contents'
+    inputs:
+      script: |
+        echo "Checking contents of the zip file..."
+        tar -tf "$(Build.ArtifactStagingDirectory)\MySnipItTool.zip"
 
-      echo "Zip file created at: $outputPath"
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish WPF Artifacts'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
+      ArtifactName: 'MySnipItTool'
+      publishLocation: 'Container'
+      ArtifactType: 'Container'
 
-- task: CmdLine@2
-  displayName: 'Check Zip File Contents'
-  inputs:
-    script: |
-      echo "Checking contents of the zip file..."
-      tar -tf "$(Build.ArtifactStagingDirectory)\MySnipItTool.zip"
-
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish WPF Artifacts'
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
-    ArtifactName: 'MySnipItTool'
-    publishLocation: 'Container'
-    ArtifactType: 'Container'
-
-
-- task: PowerShell@2
-  displayName: 'Check if Tag Exists'
-  inputs:
-    targetType: 'inline'
-    script: |
-      $tagExists = git ls-remote --tags origin | Select-String "refs/tags/${{ parameters.version }}"
-      if ($tagExists) {
+  - task: PowerShell@2
+    displayName: 'Check if Tag Exists'
+    inputs:
+      targetType: 'inline'
+      script: |
+        $tagExists = git ls-remote --tags origin | Select-String "refs/tags/${{ parameters.version }}"
+        if ($tagExists) {
           Write-Host "Tag ${{ parameters.version }} already exists. Exiting..."
           exit 1
-      } else {
+        } else {
           Write-Host "Tag does not exist. Proceeding..."
-      }
+        }
 
-# Create and Push Git Tag before release
-- script: |
-    echo "Tagging commit with ${{ parameters.version }}"
-    git config --global user.email "zacharywatson1129@gmail.com"
-    git config --global user.name "zacharywatson1129"
-    git tag ${{ parameters.version }}
-    git push origin ${{ parameters.version }}
-  displayName: 'Create and Push Git Tag'
+  - script: |
+      echo "Tagging commit with ${{ parameters.version }}"
+      git config --global user.email "zacharywatson1129@gmail.com"
+      git config --global user.name "zacharywatson1129"
+      git tag ${{ parameters.version }}
+      git push origin ${{ parameters.version }}
+    displayName: 'Create and Push Git Tag'
 
-
-- task: GitHubRelease@1
-  inputs:
-    gitHubConnection: 'zacharywatson1129'
-    repositoryName: 'zacharywatson1129/MySnipItTool'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
-    assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
+  - task: GitHubRelease@1
+    inputs:
+      gitHubConnection: 'zacharywatson1129'
+      repositoryName: 'zacharywatson1129/MySnipItTool'
+      action: 'create'
+      target: '$(Build.SourceVersion)'
+      tagSource: 'gitTag'
+      changeLogCompareToRelease: 'lastFullRelease'
+      changeLogType: 'commitBased'
+      assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
+      githubToken: '$(GitHubToken)'  # Reference the secure token
