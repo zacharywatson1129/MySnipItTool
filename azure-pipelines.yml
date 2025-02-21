@@ -59,7 +59,7 @@ steps:
     script: |
       echo "Zipping files..."
       $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
-      $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin'
+      $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin\Release'
 
       # Remove existing zip file if it exists
       if (Test-Path $outputPath) {
