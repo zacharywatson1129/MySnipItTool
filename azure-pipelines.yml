@@ -116,8 +116,9 @@ steps:
       git config --global user.email "zacharywatson1129@gmail.com"
       git config --global user.name "zacharywatson1129"
       git tag ${{ parameters.version }}
-      git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git ${{ parameters.version }}
+      git push https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
     displayName: 'Create and Push Git Tag'
+
 
   - task: GitHubRelease@1
     inputs:
