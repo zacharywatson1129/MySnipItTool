@@ -75,6 +75,8 @@ steps:
         exit 1
       }
 
+      Compress-Archive -Path "$dataPath", "$binPath" -DestinationPath $outputPath
+
       echo "Zip file created at: $outputPath"
 
 - task: CmdLine@2
