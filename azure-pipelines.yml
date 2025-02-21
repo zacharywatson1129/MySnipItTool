@@ -28,6 +28,17 @@ steps:
     verbosityRestore: 'Detailed'
     packagesDirectory: '$(Build.SourcesDirectory)\packages'
 
+- task: PowerShell@2
+  displayName: 'Print out main directory contents.'
+  inputs:
+    targetType: 'inline'
+    script: |
+      
+      $projectPath = '$(Build.SourcesDirectory)\MySnipItTool'
+
+      # List the contents of the Data directory for debugging
+      Get-ChildItem -Path $projectPath -Recurse
+
 - task: VSBuild@1
   displayName: 'Clean and Build Library'
   inputs:
