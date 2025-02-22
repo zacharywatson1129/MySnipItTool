@@ -116,19 +116,23 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        # Set GitHub authentication
+        $version = "${{ parameters.version }}"  # Use the version parameter input from the user
+        echo "Tagging commit with $version"
+
+        # Configure Git to avoid prompts
         git config --global user.email "zacharywatson1129@gmail.com"
         git config --global user.name "zacharywatson1129"
-
-        # Configure Git to use token authentication
+        
+        # Ensure remote URL is set to use the GitHub token for authentication
         git remote set-url origin https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git
 
-        # Tag the commit
-        Write-Host "Tagging commit with v1.0.3"
-        git tag v1.0.3
+        # Create and push the tag using the input version
+        git tag $version
+        git push origin $version
+    env:
+      GitHubToken: $(GitHubToken)  # Make sure GitHubToken is available as an environment variable
 
-        # Push the tag
-        git push origin v1.0.3
+
 
 
   - task: GitHubRelease@1
