@@ -116,17 +116,19 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        # Tagging the commit with the specified version
-        Write-Host "Tagging commit with ${{ parameters.version }}"
+        # Set GitHub authentication
+        git config --global user.email "zacharywatson1129@gmail.com"
+        git config --global user.name "zacharywatson1129"
 
-        # Set up the GitHub credentials for pushing the tag
-        git config --global credential.helper "store"
-        echo "https://$env:GITHUB_TOKEN@github.com" > ~/.git-credentials
+        # Configure Git to use token authentication
+        git remote set-url origin https://$(GitHubToken)@github.com/zacharywatson1129/MySnipItTool.git
 
-        # Create and push the Git tag
-        git tag ${{ parameters.version }}
-        git push https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git refs/tags/${{ parameters.version }}
+        # Tag the commit
+        Write-Host "Tagging commit with v1.0.3"
+        git tag v1.0.3
 
+        # Push the tag
+        git push origin v1.0.3
 
 
   - task: GitHubRelease@1
