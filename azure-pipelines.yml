@@ -98,14 +98,24 @@ steps:
       publishLocation: 'Container'
       ArtifactType: 'Container'
 
-  - task: GitHubRelease@0
+  - script: |
+      echo "Tagging commit with ${{ parameters.version }}"
+      git config --global user.email "zacharywatson1129@gmail.com"
+      git config --global user.name "zacharywatson1129"
+      git tag ${{ parameters.version }}
+      git push origin ${{ parameters.version }}
+    displayName: 'Create and Push Git Tag'
+
+  - task: GitHubRelease@1
     inputs:
-      gitHubConnection: 'zacharywatson1129'  # Define your GitHub connection in the DevOps project settings
+      gitHubConnection: 'zacharywatson1129'
       repositoryName: 'zacharywatson1129/MySnipItTool'
-      target: 'main'
-      tagSource: 'manual'  # You can also choose 'build' if you want it to auto-tag
-      tag: 'v$(Build.BuildId)'
-      title: 'Release $(Build.BuildId)'
+      action: 'create'
+      target: '$(Build.SourceVersion)'
+      tagSource: 'gitTag'
+      changeLogCompareToRelease: 'lastFullRelease'
+      changeLogType: 'commitBased'
       assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
+      githubToken: '$(GitHubToken)'  # Reference the secure token
 
 
