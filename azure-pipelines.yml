@@ -98,63 +98,14 @@ steps:
       publishLocation: 'Container'
       ArtifactType: 'Container'
 
-  - task: PowerShell@2
-    displayName: 'Check if Tag Exists'
+  - task: GitHubRelease@0
     inputs:
-      targetType: 'inline'
-      script: |
-        $tagExists = git ls-remote --tags origin | Select-String "refs/tags/${{ parameters.version }}"
-        if ($tagExists) {
-          Write-Host "Tag ${{ parameters.version }} already exists. Exiting..."
-          exit 1
-        } else {
-          Write-Host "Tag does not exist. Proceeding..."
-        }
-
-  - task: PowerShell@2
-    displayName: 'Create and Push Git Tag'
-    inputs:
-      targetType: 'inline'
-      script: |
-        $version = "${{ parameters.version }}"
-        Write-Host "Tagging commit with $version"
-
-        # Configure Git identity
-        git config --global user.email "zacharywatson1129@gmail.com"
-        git config --global user.name "zacharywatson1129"
-
-        # Retrieve the GitHub token from the environment variable
-        $token = $env:GITHUB_TOKEN
-        if ([string]::IsNullOrEmpty($token)) {
-            Write-Error "GitHub token is not set."
-            exit 1
-        }
-
-        # Build the remote URL using the token
-        $remoteUrl = "https://$token@github.com/zacharywatson1129/MySnipItTool.git"
-        Write-Host "Setting remote URL."  # Avoid printing the token
-
-        git remote set-url origin $remoteUrl
-
-        # Create and push the tag
-        git tag $version
-        git push origin $version
-    env:
-      GITHUB_TOKEN: $(GitHubToken)
-
-
-
-
-
-
-  - task: GitHubRelease@1
-    inputs:
-      gitHubConnection: 'zacharywatson1129'
+      gitHubConnection: 'zacharywatson1129'  # Define your GitHub connection in the DevOps project settings
       repositoryName: 'zacharywatson1129/MySnipItTool'
-      action: 'create'
-      target: '$(Build.SourceVersion)'
-      tagSource: 'gitTag'
-      changeLogCompareToRelease: 'lastFullRelease'
-      changeLogType: 'commitBased'
+      target: 'main'
+      tagSource: 'manual'  # You can also choose 'build' if you want it to auto-tag
+      tag: 'v$(Build.BuildId)'
+      title: 'Release $(Build.BuildId)'
       assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
-      githubToken: '$(GitHubToken)'  # Reference the secure token
+
+
