@@ -121,10 +121,11 @@ steps:
 
         # Build the remote URL using the token
         $remoteUrl = "https://$token@github.com/zacharywatson1129/MySnipItTool.git"
-        Write-Host "Setting remote URL."  # Avoid printing the token
+        Write-Host "Attempting to set remote URL."  # Avoid printing the token
 
         git remote set-url origin $remoteUrl
 
+        echo "Now creating and pushing the tag..."
         # Create and push the tag
         git tag $version
         git push origin $version
