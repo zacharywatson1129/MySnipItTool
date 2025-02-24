@@ -98,13 +98,38 @@ steps:
       publishLocation: 'Container'
       ArtifactType: 'Container'
 
-  - script: |
-      echo "Tagging commit with ${{ parameters.version }}"
-      git config --global user.email "zacharywatson1129@gmail.com"
-      git config --global user.name "zacharywatson1129"
-      git tag ${{ parameters.version }}
-      git push origin ${{ parameters.version }}
+  - task: PowerShell@2
     displayName: 'Create and Push Git Tag'
+    inputs:
+      targetType: 'inline'
+      script: |
+        $version = "${{ parameters.version }}"
+        Write-Host "Tagging commit with $version"
+
+        # Configure Git identity
+        git config --global user.email "zacharywatson1129@gmail.com"
+        git config --global user.name "zacharywatson1129"
+
+        # Retrieve the GitHub token from the environment variable
+        $token = $env:GITHUB_TOKEN
+        if ([string]::IsNullOrEmpty($token)) {
+            Write-Error "GitHub token is not set."
+            exit 1
+        }
+
+        echo "GitHub token is set, continuing on..."
+
+        # Build the remote URL using the token
+        $remoteUrl = "https://$token@github.com/zacharywatson1129/MySnipItTool.git"
+        Write-Host "Setting remote URL."  # Avoid printing the token
+
+        git remote set-url origin $remoteUrl
+
+        # Create and push the tag
+        git tag $version
+        git push origin $version
+    env:
+      GITHUB_TOKEN: $(GitHubToken)
 
   - task: GitHubRelease@1
     inputs:
