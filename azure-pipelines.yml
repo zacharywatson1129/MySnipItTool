@@ -127,8 +127,8 @@ steps:
 
         echo "Now creating and pushing the tag..."
         # Create and push the tag
-        #git tag $version
-        #git push origin $version
+        git tag $version
+        git push origin $version
     env:
       GITHUB_TOKEN: $(GitHubToken)
 
