@@ -136,7 +136,7 @@ steps:
         #git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $version
         #git push https://username:password(or PAT)@github.com/zacharywatson1129/MySnipItTool.git $version
     env:
-      GITHUB_TOKEN: $(GitHubToken)
+      GITHUB_TOKEN: $(GithubToken)
 
   - task: GitHubRelease@1
     inputs:
