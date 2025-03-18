@@ -129,8 +129,11 @@ steps:
         echo "Now creating and pushing the tag..."
         # Create and push the tag
         git tag $version
-        #git push origin $version
-        git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $version
+
+        echo "It is tagged, now let us push it"
+        git push origin $version
+        #git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $version
+        #git push https://username:password(or PAT)@github.com/zacharywatson1129/MySnipItTool.git $version
     env:
       GITHUB_TOKEN: $(GitHubToken)
 
