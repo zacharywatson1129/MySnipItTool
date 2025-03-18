@@ -112,13 +112,16 @@ steps:
         git config --global user.name "zacharywatson1129"
 
         # Retrieve the GitHub token from the environment variable
+        Write-Host "Printing GitHub token (for debugging only): $env:GITHUB_TOKEN"
         $token = $env:GITHUB_TOKEN
         if ([string]::IsNullOrEmpty($token)) {
             Write-Error "GitHub token is not set."
             exit 1
         }
 
-        echo "GitHub token is set, continuing on..."
+        Write-Host "Printing GitHub token from token variable: $token"
+
+        echo "GitHub token is set to some value, continuing onward!!!"
 
         # Build the remote URL using the token
         $remoteUrl = "https://$token@github.com/zacharywatson1129/MySnipItTool.git"
