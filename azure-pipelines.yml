@@ -148,7 +148,8 @@ steps:
         git tag $version
 
         echo "It is tagged, now let us push it"
-        git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version
+        git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version --verbose
+
         #git -c http.extraheader="Authorization: Bearer $token" push origin $version
         #git push origin $version
         #git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $version
