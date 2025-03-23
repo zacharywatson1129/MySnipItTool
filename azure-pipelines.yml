@@ -128,6 +128,8 @@ steps:
             exit 1
         }
 
+        Write-Host "Hey you big fool!!! ----- GitHub token length: $($token.Length)"
+
         Write-Host "Printing GitHub token from token variable: $($token)"
 
         echo "GitHub token is set to some value, continuing onward!!!"
