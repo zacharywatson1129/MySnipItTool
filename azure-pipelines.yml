@@ -32,6 +32,7 @@ steps:
       script: |
         Write-Host "Testing variable resolution..."
         $githubToken = $env:GITHUB_TOKEN
+        Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
         Write-Host "GithubToken Length: $($githubToken.Length)"
     env:
       GITHUB_TOKEN: $(GithubToken)
@@ -124,19 +125,21 @@ steps:
         git config --global user.name "zacharywatson1129"
 
         # Retrieve and validate the GitHub token
-        if ([string]::IsNullOrEmpty($env:GithubToken)) {
-          Write-Error "GitHub token is not set."
+        if ([string]::IsNullOrEmpty($env:GITHUB_TOKEN)) {
+          Write-Error "GITHUB_TOKEN token is not set."
           exit 1
         }
-        Write-Host "GithubToken Length: $($env:GithubToken.Length)"
+        Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
 
         # Build the remote URL using the token
-        git remote set-url origin "https://x-access-token:$env:GithubToken@github.com/zacharywatson1129/MySnipItTool.git"
+        git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
 
         # Create and push the tag
         git tag $version
-        git -c http.extraheader="Authorization: Bearer $env:GithubToken" push origin $version --verbose
-    
+        git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version --verbose
+    env:
+      GITHUB_TOKEN: $(GithubToken)
+
  # - task: PowerShell@2
  #   displayName: 'Create and Push Git Tag'
   #  inputs:
