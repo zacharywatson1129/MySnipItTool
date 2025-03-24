@@ -32,21 +32,9 @@ steps:
       script: |
         Write-Host "Testing variable resolution..."
         $githubToken = $env:GITHUB_TOKEN
-        $superToken = $env:SuperToken
         Write-Host "GithubToken Length: $($githubToken.Length)"
-        Write-Host "SuperToken Length: $($superToken.Length)"
     env:
       GITHUB_TOKEN: $(GithubToken)
-      SuperToken: $(superToken)
-
-
-  #- task: PowerShell@2
-  #  displayName: 'Print all environment variables'
-  #  inputs:
-  #    targetType: 'inline'
-  #    script: |
-  #      Write-Host "Printing all environment variables:"
-  #      Get-ChildItem -Path env: | ForEach-Object { Write-Host "$($_.Name) = $($_.Value)" }
 
 
   - task: NuGetToolInstaller@1
