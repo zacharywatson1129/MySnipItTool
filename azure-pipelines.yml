@@ -132,10 +132,7 @@ steps:
           exit 1
         }
         Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
-
-        $REAL_TOKEN = $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $env:USER,$env:GITHUB_TOKEN)))
-
-        Write-Host "Here is real token $($REAL_TOKEN)"
+        Write-Host "GITHUB_TOKEN value (should be ***): $($env:GITHUB_TOKEN)"
 
         # Build the remote URL using the token
         git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
