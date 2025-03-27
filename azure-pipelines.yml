@@ -9,11 +9,22 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+#variables:
+ # group: 'GitHubSecrets'  # This links the variable group to your pipeline
+ # solution: '**/*.sln'
+#  buildPlatform: 'Any CPU'
+#  buildConfiguration: 'Release'
+
 variables:
-  group: 'GitHubSecrets'  # This links the variable group to your pipeline
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  - group: 'GitHubSecrets'  # Variable group
+  - group: 'SuperGroup'     # Variable group
+  - name: solution          # Inline variable
+    value: '**/*.sln'
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+
 
 parameters:
   - name: version
@@ -121,13 +132,13 @@ steps:
         Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
         Write-Host "GITHUB_TOKEN value (should be ***): $($env:GITHUB_TOKEN)"
 
-        #Write-Host "Performing a check to make sure the super variable is set."
-        #if ([string]::IsNullOrEmpty($env:SUPER_VARIABLE)) {
-        #  Write-Error "SUPER_VARIABLE token is not set."
-        #  exit 1
-        #}
-        #Write-Host "SUPER_VARIABLE Length: $($env:SUPER_VARIABLE.Length)"
-        #Write-Host "SUPER_VARIABLE value (should be ***): $($env:SUPER_VARIABLE)"
+        Write-Host "Performing a check to make sure the super variable is set."
+        if ([string]::IsNullOrEmpty($env:SUPER_VARIABLE)) {
+          Write-Error "SUPER_VARIABLE token is not set."
+          exit 1
+        }
+        Write-Host "SUPER_VARIABLE Length: $($env:SUPER_VARIABLE.Length)"
+        Write-Host "SUPER_VARIABLE value (should be ***): $($env:SUPER_VARIABLE)"
 
         # Build the remote URL using the token
         git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
