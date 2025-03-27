@@ -24,19 +24,6 @@ parameters:
 steps:
   - checkout: self
     persistCredentials: true
-    
-  - task: PowerShell@2
-    displayName: "Debug Variable Resolution"
-    inputs:
-      targetType: inline
-      script: |
-        Write-Host "Testing variable resolution..."
-        $githubToken = $env:GITHUB_TOKEN
-        Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
-        Write-Host "GithubToken Length: $($githubToken.Length)"
-    env:
-      GITHUB_TOKEN: $(GithubToken)
-
 
   - task: NuGetToolInstaller@1
     displayName: 'Install NuGet'
