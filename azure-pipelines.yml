@@ -141,11 +141,15 @@ steps:
         Write-Host "SUPER_VARIABLE value (should be ***): $($env:SUPER_VARIABLE)"
 
         # Build the remote URL using the token
-        git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
+        git remote set-url origin "https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
+        #git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
+
+        git ls-remote https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git
 
         # Create and push the tag
         git tag $version
-        git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version --verbose
+        #git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version --verbose
+        git push origin $version --verbose
     env:
       GITHUB_TOKEN: $(GithubToken)
       SUPER_VARIABLE: $(SuperVariable)
