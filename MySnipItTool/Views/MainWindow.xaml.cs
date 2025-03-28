@@ -1,12 +1,8 @@
 ﻿using Microsoft.Win32;
 using MySnipItTool.Enums;
-using ScreenshotUtil;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-//using System.Drawing;
-
-// using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows;
@@ -19,8 +15,6 @@ using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-// TODO: 
-
 namespace MySnipItTool
 {
     /// <summary>
@@ -32,11 +26,9 @@ namespace MySnipItTool
         {
             InitializeComponent();
             drawingToolsPanel.Visibility = Visibility.Hidden;
-
-            
         }
 
-        public Color color;
+        public Color strokeColor;
         public double strokeThickness { get; private set; } = 5;
         public DrawingMode drawingMode { get; set; } = DrawingMode.None;
 
@@ -91,6 +83,7 @@ namespace MySnipItTool
             return $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToLongTimeString()}";
         }
 
+        // TODO: Create a method for standard view and one for screenshot editing view.
         private void TabCountChanged()
         {
             if (tabControl.Items.Count == 0)
@@ -244,11 +237,11 @@ namespace MySnipItTool
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                color.A = dialog.Color.A;
-                color.B = dialog.Color.B;
-                color.G = dialog.Color.G;
-                color.R = dialog.Color.R;
-                btnColor.Background = new SolidColorBrush(color);
+                strokeColor.A = dialog.Color.A;
+                strokeColor.B = dialog.Color.B;
+                strokeColor.G = dialog.Color.G;
+                strokeColor.R = dialog.Color.R;
+                btnColor.Background = new SolidColorBrush(strokeColor);
             }
         }
 
@@ -367,7 +360,7 @@ namespace MySnipItTool
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             btnColor.Background = new SolidColorBrush(Colors.Black);
-            color = Colors.Black;
+            strokeColor = Colors.Black;
             menuItemDrawing.IsEnabled = false;
             radioBtnNormal.IsChecked = true;
             radioBtnRound.IsChecked = true;

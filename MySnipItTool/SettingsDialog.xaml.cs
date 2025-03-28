@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MySnipItTool
 {
@@ -11,6 +13,7 @@ namespace MySnipItTool
         public SettingsDialog()
         {
             InitializeComponent();
+            btnCrosshairsColor.Background = new SolidColorBrush(MySnipItTool.Properties.Settings.Default.CrosshairsColor);
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -56,6 +59,28 @@ namespace MySnipItTool
         {
             slider.Value = MySnipItTool.Properties.Settings.Default.Delay;
             checkBoxCrosshairs.IsChecked = MySnipItTool.Properties.Settings.Default.ShowCrosshairs;
+            btnCrosshairsColor.Background = new SolidColorBrush(MySnipItTool.Properties.Settings.Default.CrosshairsColor);
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            
+        }
+
+        private void btnCrosshairsColor_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.ColorDialog dialog = new System.Windows.Forms.ColorDialog();
+            
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+            System.Windows.Media.Color color = new System.Windows.Media.Color();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                color.A = dialog.Color.A;
+                color.B = dialog.Color.B;
+                color.G = dialog.Color.G;
+                color.R = dialog.Color.R;
+                btnCrosshairsColor.Background = new SolidColorBrush(color);
+            }
         }
     }
 }

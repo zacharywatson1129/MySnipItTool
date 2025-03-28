@@ -46,9 +46,6 @@ namespace MySnipItTool
             canvas.MinWidth = screenshot.Width;
             canvas.MaxWidth = screenshot.Width;
             mainWindow = window as MainWindow;
-
-            // MessageBox.Show($"The actual imgControl width is {imgControl.ActualWidth} and height is {imgControl.ActualHeight}");
-            //selectedShapeBounds = new SelectionBounds(canvas, new Rectangle());
         }
 
         public int OriginalWidth { get; set; }
@@ -208,16 +205,6 @@ namespace MySnipItTool
                 case DrawingMode.Rectangle:
                     rectangle = new Rectangle();
                     currentlyDrawingShape = rectangle;
-                    // ContextMenu cm = new ContextMenu();
-                    // cm.Items.Add(new ShapePropertiesPanel());
-                    // cm.Items.Add(new Label() { Content = "hello" });
-
-                    // rectangle.ContextMenu = cm;
-
-                    // TODO - add context menu to all of these items
-                    // 1. Set Fill
-                    // 2. Set Border
-                    // rectangle.ContextMenu.Items.Add(new TextBlock() { Text = "Testing..." });
                     SetStrokeProperties(rectangle);
                     startPoint = e.GetPosition(canvas);
                     endPoint = e.GetPosition(canvas);
@@ -246,6 +233,7 @@ namespace MySnipItTool
                     Canvas.SetLeft(textBox, e.GetPosition(canvas).X);
                     Canvas.SetTop(textBox, e.GetPosition(canvas).Y);
                     canvas.Children.Add(textBox);
+                    // This brings focus to the textbox so user can start typing in it right away.
                     Dispatcher.BeginInvoke(
                                     DispatcherPriority.ContextIdle,
                                     new Action(delegate ()
@@ -280,7 +268,7 @@ namespace MySnipItTool
         {
             shape.MouseEnter += OnMouseOver;
 
-            shape.Stroke = new SolidColorBrush(mainWindow.color);
+            shape.Stroke = new SolidColorBrush(mainWindow.strokeColor);
             shape.StrokeThickness = mainWindow.strokeThickness;
             shape.Fill = new SolidColorBrush(Colors.Transparent);
             // Set the stroke thickness
