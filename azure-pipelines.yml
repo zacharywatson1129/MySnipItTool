@@ -3,8 +3,8 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
-trigger:
-  - main
+trigger: none
+pr: none
 
 pool:
   vmImage: 'windows-latest'
@@ -21,9 +21,9 @@ variables:
 
 parameters:
   - name: version
-    displayName: 'Release Version (e.g., v1.0.0)'
+    displayName: 'Release Version (e.g., 1.0.0)'
     type: string
-    default: 'v1.0.0'
+    default: '1.0.0'
 
 steps:
   - checkout: self
