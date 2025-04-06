@@ -9,15 +9,8 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-#variables:
- # group: 'GitHubSecrets'  # This links the variable group to your pipeline
- # solution: '**/*.sln'
-#  buildPlatform: 'Any CPU'
-#  buildConfiguration: 'Release'
-
 variables:
   - group: 'GitHubSecrets'  # Variable group
-  - group: 'SuperGroup'     # Variable group
   - name: solution          # Inline variable
     value: '**/*.sln'
   - name: buildPlatform
@@ -116,7 +109,7 @@ steps:
       targetType: 'inline'
       script: |
         $version = "${{ parameters.version }}"
-        Write-Host "Tagging commit with $version"
+        Write-Host "-----Tagging commit with $version"
 
         # Configure Git identity
         Write-Host "Configuring git email and name"
@@ -124,35 +117,30 @@ steps:
         git config --global user.name "zacharywatson1129"
 
         # Retrieve and validate the GitHub token
-        Write-Host "Performing a check to make sure the PAT is set."
+        Write-Host "-----Performing a check to make sure the PAT is set."
         if ([string]::IsNullOrEmpty($env:GITHUB_TOKEN)) {
           Write-Error "GITHUB_TOKEN token is not set."
           exit 1
         }
-        Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
-        Write-Host "GITHUB_TOKEN value (should be ***): $($env:GITHUB_TOKEN)"
 
-        Write-Host "Performing a check to make sure the super variable is set."
-        if ([string]::IsNullOrEmpty($env:SUPER_VARIABLE)) {
-          Write-Error "SUPER_VARIABLE token is not set."
-          exit 1
-        }
-        Write-Host "SUPER_VARIABLE Length: $($env:SUPER_VARIABLE.Length)"
-        Write-Host "SUPER_VARIABLE value (should be ***): $($env:SUPER_VARIABLE)"
+        # Debug steps - leave this off unless you need them.
+        #Write-Host "GITHUB_TOKEN Length: $($env:GITHUB_TOKEN.Length)"
+        #Write-Host "GITHUB_TOKEN value (should be ***): $($env:GITHUB_TOKEN)"
 
         # Build the remote URL using the token
+        Write-Host "-----Setting the remote url."
         git remote set-url origin "https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
-        #git remote set-url origin "https://x-access-token:$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git"
 
-        git ls-remote https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git
+        # Another debug step, this lists all the remote tags.
+        #git ls-remote https://$env:GITHUB_TOKEN@github.com/zacharywatson1129/MySnipItTool.git
 
         # Create and push the tag
+        Write-Host "-----Tagging this commit."
         git tag $version
-        #git -c http.extraheader="Authorization: Bearer $env:GITHUB_TOKEN" push origin $version --verbose
+        Write-Host "-----Pushing this now tagged commit."
         git push origin $version --verbose
     env:
       GITHUB_TOKEN: $(GithubToken)
-      SUPER_VARIABLE: $(SuperVariable)
 
  # - task: PowerShell@2
  #   displayName: 'Create and Push Git Tag'
