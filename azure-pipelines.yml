@@ -68,7 +68,7 @@ steps:
       targetType: 'inline'
       script: |
         echo "Zipping files..."
-        $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
+        $outputPath = '$(Build.ArtifactStagingDirectory)\MySnipItTool-Release-$version.zip'
         $binPath = '$(Build.SourcesDirectory)\MySnipItTool\bin\Release'
 
         # Remove existing zip file if it exists
@@ -93,12 +93,12 @@ steps:
     inputs:
       script: |
         echo "Checking contents of the zip file..."
-        tar -tf "$(Build.ArtifactStagingDirectory)\MySnipItTool.zip"
+        tar -tf "$(Build.ArtifactStagingDirectory)\MySnipItTool-Release-$version.zip"
 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish WPF Artifacts'
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)\MySnipItTool-Release-$version.zip'
       ArtifactName: 'MySnipItTool'
       publishLocation: 'Container'
       ArtifactType: 'Container'
@@ -151,7 +151,7 @@ steps:
       tagSource: 'gitTag'
       changeLogCompareToRelease: 'lastFullRelease'
       changeLogType: 'commitBased'
-      assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool.zip'  # Point to your zip
+      assets: '$(Build.ArtifactStagingDirectory)\MySnipItTool-Release-$version.zip'  # Point to your zip
       githubToken: '$(GitHubToken)'  # Reference the secure token
 
 
