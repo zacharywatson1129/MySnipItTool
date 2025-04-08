@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -15,6 +16,10 @@ namespace MySnipItTool
 {
     /// <summary>
     /// Interaction logic for SnipScreenForm.xaml
+    /// The SnipScreenForm is just a transparent canvas.
+    /// It contains rectangles, which get slightly colored to represent
+    /// not selected areas. They are the top, bottom, left, and right rectangles.
+    /// There is also the center selectionRectangle.
     /// </summary>
     public partial class SnipScreenForm : Window
     {
@@ -23,24 +28,21 @@ namespace MySnipItTool
             InitializeComponent();
         }  
 
-        private Rectangle rectangle = new Rectangle();
-        private Point startPoint;
-        private Point endPoint;
-        private Point topLeft;
-        private bool isDrawing;
+        private Rectangle selectionRectangle = new Rectangle();
+        private Point startPoint = new Point { X = 0, Y = 0 };
+        private Point endPoint = new Point { X = 0, Y = 0 };
+        private Point topLeft = new Point { X = 0, Y = 0 };
+        private Point bottomRight = new Point { X = 0, Y = 0 };
         public BitmapImage screenCapture;
-        private bool showCrosshairs = false;
-        Line verticalLine = new Line();
-        Line horizontalLine = new Line();
 
         #region Mouse Events
         private void MouseDown_Event(object sender, MouseEventArgs e)
         {
             startPoint = e.GetPosition(canvas);
             endPoint = e.GetPosition(canvas);
-            canvas.Children.Add(rectangle);
-            Canvas.SetLeft(rectangle, startPoint.X);
-            Canvas.SetTop(rectangle, startPoint.Y);
+            canvas.Children.Add(selectionRectangle);
+            Canvas.SetLeft(selectionRectangle, startPoint.X);
+            Canvas.SetTop(selectionRectangle, startPoint.Y);
         }
 
         private void MouseMove_Event(object sender, MouseEventArgs e)
@@ -50,50 +52,34 @@ namespace MySnipItTool
                 endPoint = e.GetPosition(canvas);
                 CalculateNewRectanglePosition();
 
-                Point topLeft = GetRectangleTopLeft();
-                Point bottomRight = GetRectangleBottomRight();
+                topLeft = GetRectangleTopLeft();
+                bottomRight = GetRectangleBottomRight();
 
-                Canvas.SetLeft(rectLeft, 0);
-                Canvas.SetTop(rectLeft, 0);
-                rectLeft.Width = topLeft.X;
-                
-                Canvas.SetLeft(rectRight, bottomRight.X);
-                Canvas.SetTop(rectRight, 0);
-                rectRight.Width = Width - bottomRight.X;
-
-                Canvas.SetLeft(rectTop, topLeft.X);
-                Canvas.SetTop(rectTop, 0);
-                rectTop.Width = rectangle.Width;
-                rectTop.Height = topLeft.Y;
-
-                Canvas.SetLeft(rectBottom, topLeft.X);
-                Canvas.SetTop(rectBottom, topLeft.Y + rectangle.Height);
-                rectBottom.Width = rectangle.Width;
-                rectBottom.Height = this.Height - bottomRight.Y;
+                UpdateBorderRectangles();
             }
         }
 
         private Point GetRectangleTopLeft()
         {
-            double x = Canvas.GetLeft(rectangle);
-            double y = Canvas.GetTop(rectangle);
+            double x = Canvas.GetLeft(selectionRectangle);
+            double y = Canvas.GetTop(selectionRectangle);
             return new Point { X = x, Y = y };
         }
 
         private Point GetRectangleBottomRight()
         {
-            double x = Canvas.GetLeft(rectangle);
-            double y = Canvas.GetTop(rectangle);
+            double x = Canvas.GetLeft(selectionRectangle);
+            double y = Canvas.GetTop(selectionRectangle);
             Point p = new Point { X = x, Y = y };
-            p.X += rectangle.Width;
-            p.Y += rectangle.Height;
+            p.X += selectionRectangle.Width;
+            p.Y += selectionRectangle.Height;
             return p;
         }
 
         private int GetWidth()
         {
-            Point topLeft = new Point { X = Canvas.GetLeft(rectangle), Y = Canvas.GetTop(rectangle) };
-            Point bottomRight = new Point { X = topLeft.X + rectangle.Width, Y = topLeft.Y + rectangle.Height };
+            Point topLeft = new Point { X = Canvas.GetLeft(selectionRectangle), Y = Canvas.GetTop(selectionRectangle) };
+            Point bottomRight = new Point { X = topLeft.X + selectionRectangle.Width, Y = topLeft.Y + selectionRectangle.Height };
             
             topLeft = PointToScreen(topLeft);
             bottomRight = PointToScreen(bottomRight);
@@ -104,8 +90,8 @@ namespace MySnipItTool
 
         private int GetHeight()
         {
-            Point topLeft = new Point { X = Canvas.GetLeft(rectangle), Y = Canvas.GetTop(rectangle) };
-            Point bottomRight = new Point { X = topLeft.X + rectangle.Width, Y = topLeft.Y + rectangle.Height };
+            Point topLeft = new Point { X = Canvas.GetLeft(selectionRectangle), Y = Canvas.GetTop(selectionRectangle) };
+            Point bottomRight = new Point { X = topLeft.X + selectionRectangle.Width, Y = topLeft.Y + selectionRectangle.Height };
 
             topLeft = PointToScreen(topLeft);
             bottomRight = PointToScreen(bottomRight);
@@ -116,8 +102,11 @@ namespace MySnipItTool
         private void MouseUp_Event(object sender, MouseEventArgs e)
         {
             this.Hide();
-            Point p = new Point { X = Canvas.GetLeft(rectangle), Y = Canvas.GetTop(rectangle) };
+            Point p = new Point { X = Canvas.GetLeft(selectionRectangle), Y = Canvas.GetTop(selectionRectangle) };
             p = PointToScreen(p);
+            // Important, here we do a delay!
+            int delay = MySnipItTool.Properties.Settings.Default.Delay;
+            Thread.Sleep(delay);
             this.screenCapture =
                 GetFromScreenshot(ScreenshotUtil.ScreenshotUtility.TakeScreenshot(
                 GetWidth(),
@@ -135,16 +124,16 @@ namespace MySnipItTool
 
         private void SetCrossHairsPosition(Point currentPosition)
         {
-            verticalLine.X1 = currentPosition.X;
-            verticalLine.Y1 = 0;
-            verticalLine.X2 = currentPosition.X;
-            verticalLine.Y2 = Height;
+            verticalLineLeft.X1 = currentPosition.X;
+            verticalLineLeft.Y1 = 0;
+            verticalLineLeft.X2 = currentPosition.X;
+            verticalLineLeft.Y2 = Height;
 
             // Setting the horizontal line properties
-            horizontalLine.X1 = 0;
-            horizontalLine.Y1 = currentPosition.Y;
-            horizontalLine.X2 = Width;
-            horizontalLine.Y2 = currentPosition.Y;
+            horizontalLineBottom.X1 = 0;
+            horizontalLineBottom.Y1 = currentPosition.Y;
+            horizontalLineBottom.X2 = Width;
+            horizontalLineBottom.Y2 = currentPosition.Y;
         }
 
         /// <summary>
@@ -158,35 +147,132 @@ namespace MySnipItTool
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.showCrosshairs = Settings.Default.ShowCrosshairs;
-            if (showCrosshairs)
+            if (Settings.Default.ShowCrosshairs)
             {
-                canvas.Children.Add(verticalLine);
-                canvas.Children.Add(horizontalLine);
+                // Set the border colors to be dark.
+                EnableDarkBorders();
+
+                // verticalLineLeft.Stroke = new SolidColorBrush(Colors.DarkBlue);
+                // horizontalLineBottom.Stroke = new SolidColorBrush(Colors.DarkBlue);
             }
 
-            rectLeft.Width = this.Width / 2;
-            rectLeft.Height = this.Height;
+            InitializeRectangleProperties();
 
-            Canvas.SetLeft(rectRight, this.Width / 2);
-            Canvas.SetTop(rectRight, 0);
-
-            rectRight.Width = this.Width / 2;
-            rectRight.Height = this.Height;
             
-            rectangle.Stroke = new SolidColorBrush(Colors.DarkGray);
-            rectangle.StrokeThickness = 2;
+            
+
+            //rectLeft.Width = this.Width / 2;
+            //rectLeft.Height = this.Height;
+
+            //Canvas.SetLeft(rectRight, this.Width / 2);
+            //Canvas.SetTop(rectRight, 0);
+
+            //rectRight.Width = this.Width / 2;
+            //rectRight.Height = this.Height;
+            
+            
+
+            
         }
 
+        /// <summary>
+        /// Simply sets the stroke colors of rectLeft, rectRight, rectTop, and rectBottom to be black.
+        /// This method is called whenever crosshairs are enabled. Colored borders of these rectangles
+        /// eliminates the need for 4 lines to be drawn.
+        /// </summary>
+        private void EnableDarkBorders()
+        {
+            Brush border = new SolidColorBrush(MySnipItTool.Properties.Settings.Default.CrosshairsColor);
+            rectLeft.Stroke = border;
+            rectRight.Stroke = border;
+            rectTop.Stroke = border;
+            rectBottom.Stroke = border;
+        }
+
+        /// <summary>
+        /// Sets the position of the border rectangles and initializes selection rectangle properties.
+        /// </summary>
+        private void InitializeRectangleProperties()
+        {
+            // This is the same regardless of whether dark borders for crosshairs are enabled.
+            // selectionRectangle.Stroke = new SolidColorBrush(Colors.DarkGray);
+            selectionRectangle.Stroke = new SolidColorBrush(Colors.OrangeRed);
+            DoubleCollection c = new DoubleCollection() { 5.0d, 1.0d };
+            selectionRectangle.StrokeDashArray = c;
+            
+            selectionRectangle.StrokeThickness = 2;
+
+            // Left rectangle has top left point of 0,0.
+            // It has a width going from left side of screen to topLeft.X.
+            Canvas.SetLeft(rectLeft, 0);
+            Canvas.SetTop(rectLeft, 0);
+            rectLeft.Width = topLeft.X;
+            rectLeft.Height = this.Height;
+            // Left rectangle height never changes.
+
+            // Right rectangle has top left point of bottomRight.X, 0
+            Canvas.SetLeft(rectRight, bottomRight.X);
+            Canvas.SetTop(rectRight, 0);
+            rectRight.Width = this.Width - bottomRight.X;
+            rectRight.Height = this.Height;
+            // Right rectangle height never changes.
+
+
+            // Top rectangle has a top left point of 0, 0.
+            // It has a width as wide as the screen.
+            Canvas.SetLeft(rectTop, 0);
+            Canvas.SetTop(rectTop, 0);
+            rectTop.Height = topLeft.Y;
+            rectTop.Width = this.Width;
+            // Width never changes.
+
+            // The bottom rectangle starts at topLeft.X, topLeft.Y + height of selection rectangle.
+            Canvas.SetLeft(rectBottom, 0);
+            Canvas.SetTop(rectBottom, topLeft.Y + selectionRectangle.Height);
+            rectBottom.Height = this.Height - bottomRight.Y;
+            rectBottom.Width = this.Width;
+        }
+
+        private void UpdateBorderRectangles()
+        {
+            // Left rectangle has top left point of 0,0.
+            // It has a width going from left side of screen to topLeft.X.
+            rectLeft.Width = topLeft.X;
+            // Left rectangle height never changes.
+
+            // Right rectangle has top left point of bottomRight.X, 0
+            Canvas.SetLeft(rectRight, bottomRight.X);
+            rectRight.Width = this.Width - bottomRight.X;
+            // Right rectangle height never changes.
+
+
+            // Top rectangle has a top left point of 0, 0.
+            // It has a width as wide as the screen.
+
+            rectTop.Height = topLeft.Y;
+            // Width never changes.
+
+            // The bottom rectangle starts at topLeft.X, topLeft.Y + height of selection rectangle.
+            Canvas.SetTop(rectBottom, topLeft.Y + selectionRectangle.Height);
+            rectBottom.Height = this.Height - bottomRight.Y;
+        }
+
+        /// <summary>
+        /// Recalculates the rectangle position given the selected area, and repositions it on canvas.
+        /// </summary>
         private void CalculateNewRectanglePosition()
         {
-            rectangle.Width = Math.Abs(startPoint.X - endPoint.X);
-            rectangle.Height = Math.Abs(startPoint.Y - endPoint.Y);
-            double x = Math.Min(startPoint.X, endPoint.X);
-            double y = Math.Min(startPoint.Y, endPoint.Y);
-            
-            Canvas.SetLeft(rectangle, x);
-            Canvas.SetTop(rectangle, y);
+            selectionRectangle.Width = Math.Abs(startPoint.X - endPoint.X);
+            selectionRectangle.Height = Math.Abs(startPoint.Y - endPoint.Y);
+
+            topLeft.X = Math.Min(startPoint.X, endPoint.X);
+            topLeft.Y = Math.Min(startPoint.Y, endPoint.Y);
+
+            bottomRight.X = topLeft.X + selectionRectangle.Width;
+            bottomRight.Y = topLeft.Y + selectionRectangle.Height;
+
+            Canvas.SetLeft(selectionRectangle, topLeft.X);
+            Canvas.SetTop(selectionRectangle, topLeft.Y);
         }
 
         private BitmapImage GetFromScreenshot(System.Drawing.Bitmap image)

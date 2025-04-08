@@ -8,9 +8,8 @@
     xmlns:properties="clr-namespace:MySnipItTool.Properties"
     Title="Settings"
     Width="332.927"
-    Height="180"
+    Height="200"
     Background="#FFC7C7C7"
-    Closed="Window_Closed"
     FontFamily="Segoe UI"
     Loaded="Window_Loaded"
     ResizeMode="NoResize"
@@ -44,11 +43,11 @@
                 Width="128"
                 Margin="40,0,0,0"
                 VerticalAlignment="Center"
+                IsSnapToTickEnabled="True"
                 Maximum="2000"
                 Minimum="0"
                 TickFrequency="250"
-                TickPlacement="BottomRight"
-                ValueChanged="slider_ValueChanged" />
+                TickPlacement="BottomRight" />
             <TextBlock
                 Name="lblDelay"
                 Margin="15,0,0,0"
@@ -68,15 +67,20 @@
                 VerticalAlignment="Center"
                 RenderTransformOrigin="-3.512,0.333" />
         </StackPanel>
+
         <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
             <TextBlock
                 Margin="10,0,0,0"
                 VerticalAlignment="Center"
                 Text="Crosshairs Color:" />
             <Button
-                x:Name="btnCrosshairsColor" Background="Red"
-                Width="20" BorderBrush="Transparent"
-                Height="20" Margin="175 0 0 0" Click="btnCrosshairsColor_Click" />
+                x:Name="btnCrosshairsColor"
+                Width="20"
+                Height="20"
+                Margin="175,0,0,0"
+                Background="Red"
+                BorderBrush="Transparent"
+                Click="btnCrosshairsColor_Click" />
         </StackPanel>
         <StackPanel Margin="0,5,0,10" Orientation="Horizontal">
             <Button

@@ -1,22 +1,73 @@
-﻿<Window x:Class="MySnipItTool.SnipScreenForm"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MySnipItTool"
-        mc:Ignorable="d" AllowsTransparency="True"
-        Title="SnipScreenForm" Cursor="Cross" Loaded="Window_Loaded"
-          WindowState="Maximized"
-        WindowStyle="None" Background="#01000000">
-        <!--MouseDown="MouseDown_Event" MouseMove="MouseMove_Event" MouseUp="MouseUp_Event"-->
+﻿<Window
+    x:Class="MySnipItTool.SnipScreenForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MySnipItTool"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SnipScreenForm"
+    AllowsTransparency="True"
+    Background="#01000000"
+    Cursor="Cross"
+    Loaded="Window_Loaded"
+    WindowState="Maximized"
+    WindowStyle="None"
+    mc:Ignorable="d">
 
-    <Canvas Name="canvas" Background="#01000000" FocusManager.IsFocusScope="True"
-
-            MouseDown="MouseDown_Event" MouseMove="MouseMove_Event" 
-            MouseUp="MouseUp_Event">
-        <Rectangle Fill="#30000000" Width="10" Height="10" StrokeThickness="1" x:Name="rectLeft" />
-        <Rectangle Fill="#30000000" Width="10" Height="10" StrokeThickness="1" x:Name="rectRight"/>
-        <Rectangle Fill="#30000000" StrokeThickness="1" x:Name="rectTop" />
-        <Rectangle Fill="#30000000" StrokeThickness="1" x:Name="rectBottom" />
+    <Canvas
+        Name="canvas"
+        Background="#01000000"
+        FocusManager.IsFocusScope="True"
+        MouseDown="MouseDown_Event"
+        MouseMove="MouseMove_Event"
+        MouseUp="MouseUp_Event">
+        <Rectangle
+            x:Name="rectLeft"
+            Width="10"
+            Height="10"
+            Fill="#30000000"
+            Stroke="Transparent"
+            StrokeThickness="1" />
+        <Rectangle
+            x:Name="rectRight"
+            Width="10"
+            Height="10"
+            Fill="#30000000"
+            Stroke="Transparent"
+            StrokeThickness="1" />
+        <Rectangle
+            x:Name="rectTop"
+            Fill="#30000000"
+            Stroke="Transparent"
+            StrokeThickness="1" />
+        <Rectangle
+            x:Name="rectBottom"
+            Fill="#30000000"
+            Stroke="Transparent"
+            StrokeThickness="1" />
+        <Line
+            x:Name="verticalLineLeft"
+            X1="0"
+            X2="0"
+            Y1="0"
+            Y2="0" />
+        <Line
+            x:Name="verticalLineRight"
+            X1="0"
+            X2="0"
+            Y1="0"
+            Y2="0" />
+        <Line
+            x:Name="horizontalLineBottom"
+            X1="0"
+            X2="0"
+            Y1="0"
+            Y2="0" />
+        <Line
+            x:Name="horizontalLineTop"
+            X1="0"
+            X2="0"
+            Y1="0"
+            Y2="0" />
     </Canvas>
 </Window>

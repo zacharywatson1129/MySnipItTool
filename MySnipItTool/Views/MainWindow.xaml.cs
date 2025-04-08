@@ -517,47 +517,9 @@ namespace MySnipItTool
             //mainMode = DrawingTool.Equation;
         }
 
-        #region Event Handlers for ComboBox Item Selection
-        private void comboBoxItemSelect_Selected(object sender, RoutedEventArgs e)
-        {
-            //mainMode = MainMode.Select;
-            //DeselectAllBtnsBut();
-            this.Cursor = Cursors.Arrow;
-            //txtBlockMode.Text = "Select";
-            //txtDrawingToolMsg.Text = "";
-        }
-
-        private void comboBoxItemErase_Selected(object sender, RoutedEventArgs e)
-        {
-            //mainMode = MainMode.Erase;
-            //DeselectAllBtnsBut();
-            this.Cursor = Cursors.Arrow;
-            //txtBlockMode.Text = "Erase";
-            //txtDrawingToolMsg.Text = "";
-        }
-
-        private void comboBoxItemDraw_Selected(object sender, RoutedEventArgs e)
-        {
-            //mainMode = MainMode.Draw;
-            this.Cursor = Cursors.Cross;
-            //txtBlockMode.Text = "Draw";
-            //txtDrawingToolMsg.Text = "None";
-        }
-        #endregion
-
         public void SetMessageInStatusBar(string msg)
         {
             //textBlockMessage.Text = msg;
-        }
-
-        private void btnFreeDraw_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnErase_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void radioBtnSkinny_Click(object sender, RoutedEventArgs e)

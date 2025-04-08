@@ -10,16 +10,13 @@ namespace MySnipItTool
     /// </summary>
     public partial class SettingsDialog : Window
     {
+        private System.Windows.Media.Color crosshairColor;
+
         public SettingsDialog()
         {
             InitializeComponent();
-            btnCrosshairsColor.Background = new SolidColorBrush(MySnipItTool.Properties.Settings.Default.CrosshairsColor);
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            // Properties.Settings.Default.Save();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -37,11 +34,6 @@ namespace MySnipItTool
             slider.Value+=250;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -51,35 +43,41 @@ namespace MySnipItTool
         {
             MySnipItTool.Properties.Settings.Default.Delay = (int)slider.Value;
             MySnipItTool.Properties.Settings.Default.ShowCrosshairs = checkBoxCrosshairs.IsChecked.Value;
+            MySnipItTool.Properties.Settings.Default.CrosshairsColor = crosshairColor;
             Properties.Settings.Default.Save();
             this.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // --Set each setting value.--
+
+            // Delay
             slider.Value = MySnipItTool.Properties.Settings.Default.Delay;
-            checkBoxCrosshairs.IsChecked = MySnipItTool.Properties.Settings.Default.ShowCrosshairs;
-            btnCrosshairsColor.Background = new SolidColorBrush(MySnipItTool.Properties.Settings.Default.CrosshairsColor);
-        }
-
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
             
+            // Show Crosshairs
+            checkBoxCrosshairs.IsChecked = MySnipItTool.Properties.Settings.Default.ShowCrosshairs;
+            
+            // Crosshairs color
+            crosshairColor = MySnipItTool.Properties.Settings.Default.CrosshairsColor;
+            btnCrosshairsColor.Background = new SolidColorBrush(crosshairColor);
         }
 
+        
         private void btnCrosshairsColor_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.ColorDialog dialog = new System.Windows.Forms.ColorDialog();
             
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-            System.Windows.Media.Color color = new System.Windows.Media.Color();
+            crosshairColor = new System.Windows.Media.Color();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                color.A = dialog.Color.A;
-                color.B = dialog.Color.B;
-                color.G = dialog.Color.G;
-                color.R = dialog.Color.R;
-                btnCrosshairsColor.Background = new SolidColorBrush(color);
+                crosshairColor.A = dialog.Color.A;
+                crosshairColor.B = dialog.Color.B;
+                crosshairColor.G = dialog.Color.G;
+                crosshairColor.R = dialog.Color.R;
+                btnCrosshairsColor.Background = new SolidColorBrush(crosshairColor);
+                
             }
         }
     }

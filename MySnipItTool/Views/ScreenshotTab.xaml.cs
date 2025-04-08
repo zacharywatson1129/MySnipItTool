@@ -318,6 +318,22 @@ namespace MySnipItTool
             }*/
         }
 
+        private Polygon CreatePolygonFromRectangularSelection(Point topLeft, double radius, int numSides)
+        {
+            Polygon p = new Polygon();
+            
+            throw new NotImplementedException();   
+        }
+
+        /// <summary>
+        /// This functionality was found on StackOverFlow. This function will create a Polygon
+        /// which can then be added to the canvas. For now, the functionality is turned off 
+        /// because of the awkwardness of drawing it. 
+        /// </summary>
+        /// <param name="radius"></param>
+        /// <param name="numSides"></param>
+        /// <param name="center"></param>
+        /// <returns></returns>
         private Polygon CreatePolygon(double radius, int numSides, Point center)
         {
             List<Point> pts = new List<Point>();
@@ -331,7 +347,41 @@ namespace MySnipItTool
             Polygon output = new Polygon();
             pts.ForEach(x => output.Points.Add(x));
 
-            if (pts.Count % 2 == 0)
+            if (pts.Count % 2 == 0) // if an even sided polygon, square, hexagon, octagon, etc.
+            {
+                RotateTransform rotation = new RotateTransform((360 / numSides) / 2);
+                rotation.CenterX = center.X;
+                rotation.CenterY = center.Y;
+                output.RenderTransform = rotation;
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// This functionality was found on StackOverFlow. This function will create a Polygon
+        /// which can then be added to the canvas. For now, the functionality is turned off 
+        /// because of the awkwardness of drawing it. This should allow the creation of stretched polygons
+        /// based on the selection bounds.
+        /// </summary>
+        /// <param name="xRadius"></param>
+        /// <param name="numSides"></param>
+        /// <param name="center"></param>
+        /// <returns></returns>
+        private Polygon CreatePolygon(double xRadius, double yRadius, int numSides, Point center)
+        {
+            List<Point> pts = new List<Point>();
+            pts.Add(new Point { X = center.X, Y = center.Y + yRadius });
+            double theta = (2 * Math.PI) / numSides;
+            for (int i = 1; i < numSides; i++)
+            {
+                pts.Add(new Point { X = center.X + xRadius * Math.Sin(theta), Y = center.Y + yRadius * Math.Cos(theta) });
+                theta += (2 * Math.PI) / numSides;
+            }
+            Polygon output = new Polygon();
+            pts.ForEach(x => output.Points.Add(x));
+
+            if (pts.Count % 2 == 0) // if an even sided polygon, square, hexagon, octagon, etc.
             {
                 RotateTransform rotation = new RotateTransform((360 / numSides) / 2);
                 rotation.CenterX = center.X;
@@ -534,14 +584,18 @@ namespace MySnipItTool
                     polyLine = null;
                     break;
                 case DrawingMode.Line:
-                    p = line.TranslatePoint(new Point(0, 0), canvas);
+                    // This check is in case you start drawing outside the canvas area
+                    // We would not want to do anything in that case, just ignore.
+                    if (line != null)
+                    {
+                        p = line.TranslatePoint(new Point(0, 0), canvas);
 
-                    double currentLeft = p.X;
-                    double currentTop = p.Y;
+                        double currentLeft = p.X;
+                        double currentTop = p.Y;
 
-                    Canvas.SetLeft(line, currentLeft);
-                    Canvas.SetTop(line, currentTop);
-
+                        Canvas.SetLeft(line, currentLeft);
+                        Canvas.SetTop(line, currentTop);
+                    }
                     break;
                 case DrawingMode.Rectangle:
                     break;
